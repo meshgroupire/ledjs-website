@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
-const SERVICE_ID = 'service_ghxxdu9';
-const TEMPLATE_ID = 'template_gb174id';
-const PUBLIC_KEY = 'dIPJxUkcC66p2PCZM';
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const QuoteForm = () => {
   const [formData, setFormData] = useState({
