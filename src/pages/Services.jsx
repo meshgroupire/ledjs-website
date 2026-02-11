@@ -49,7 +49,7 @@ const Services = () => {
                         const parent = e.target.parentElement;
                         if (!parent.querySelector(".fallback-placeholder")) {
                           parent.innerHTML += `
-                            <div class="fallback-placeholder w-full min-h-[400px] bg-gradient-to-br ${service.gradient} flex items-center justify-center">
+                            <div class="fallback-placeholder w-full min-h-[400px] bg-linear-to-br ${service.gradient} flex items-center justify-center">
                               <div class="text-center p-8">
                                 <p class="text-white/80 text-sm">Place your image at: ${service.image}</p>
                               </div>
@@ -59,7 +59,7 @@ const Services = () => {
                       }}
                     />
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-10`}
+                      className={`absolute inset-0 bg-linear-br ${service.gradient} opacity-10`}
                     />
                   </div>
                 </div>

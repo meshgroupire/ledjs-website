@@ -127,7 +127,7 @@ const About = () => {
                 alt="LEDJS Team"
                 className="rounded-xl shadow-2xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-secondary-600 opacity-20 rounded-xl"></div>
+              <div className="absolute inset-0 bg-linear-to-br from-primary-600 to-secondary-600 opacity-20 rounded-xl"></div>
             </div>
           </div>
         </div>
@@ -144,7 +144,7 @@ const About = () => {
             {clients.map((client, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 flex items-center justify-center h-32"
+                className="shrink-0 flex items-center justify-center h-32"
               >
                 <img
                   src={client.logo}
@@ -174,7 +174,7 @@ const About = () => {
               const Icon = value.icon;
               return (
                 <div key={index} className="card text-center">
-                  <div className="inline-flex p-4 rounded-full bg-gradient-to-br from-primary-600 to-secondary-600 mb-4">
+                  <div className="inline-flex p-4 rounded-full bg-linear-to-br from-primary-600 to-secondary-600 mb-4">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">
@@ -211,7 +211,7 @@ const About = () => {
                   alt={image.alt}
                   className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             ))}
           </div>

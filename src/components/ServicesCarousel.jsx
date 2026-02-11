@@ -51,7 +51,7 @@ const ServicesCarousel = ({ services }) => {
             return (
               <div
                 key={service.id || index}
-                className="min-w-full flex-shrink-0"
+                className="min-w-full shrink-0"
               >
                 <div className="relative h-[500px] md:h-[600px] w-full">
                   {/* Service Image Background */}
@@ -65,14 +65,14 @@ const ServicesCarousel = ({ services }) => {
                         const parent = e.target.parentElement;
                         if (!parent.querySelector(".fallback-bg")) {
                           parent.innerHTML += `
-                            <div class="fallback-bg w-full h-full bg-gradient-to-br ${service.gradient}"></div>
+                            <div class="fallback-bg w-full h-full bg-linear-to-br ${service.gradient}"></div>
                           `;
                         }
                       }}
                     />
                     {/* Gradient Overlay */}
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-70`}
+                      className={`absolute inset-0 bg-linear-to-br ${service.gradient} opacity-70`}
                     ></div>
                     <div className="absolute inset-0 bg-black/40"></div>
                   </div>

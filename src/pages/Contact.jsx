@@ -57,7 +57,7 @@ const Contact = () => {
                   const Icon = info.icon;
                   const content = (
                     <div className="flex items-start space-x-4 p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-                      <div className="bg-gradient-to-br from-primary-600 to-secondary-600 p-3 rounded-lg">
+                      <div className="bg-linear-to-br from-primary-600 to-secondary-600 p-3 rounded-lg">
                         <Icon className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -82,7 +82,7 @@ const Contact = () => {
               </div>
 
               {/* Additional Info */}
-              <div className="mt-8 p-6 bg-gradient-to-br from-primary-600/10 to-secondary-600/10 rounded-lg border border-primary-500/20">
+              <div className="mt-8 p-6 bg-linear-to-br from-primary-600/10 to-secondary-600/10 rounded-lg border border-primary-500/20">
                 <h3 className="text-white font-semibold mb-2">
                   Quick Response Guarantee
                 </h3>

@@ -5,13 +5,16 @@
 export const services = [
   {
     id: "wedding-djs",
-    title: "Wedding DJs",
+    title: "Wedding DJs.... but not wedding DJs",
     description:
-      "Professional wedding DJ services that create the perfect atmosphere for your special day. From ceremony music to keeping the dance floor packed all night long.",
-    shortDescription:
-      "Professional wedding DJ services that create the perfect atmosphere for your special day.",
-    longDescription:
-      "Our wedding DJ service provides complete entertainment from ceremony to reception. We work closely with you to understand your musical preferences and create the perfect atmosphere for your big day. Our experienced DJs know how to read the crowd, keep energy levels high, and ensure everyone has an unforgettable time.",
+  "Modern wedding DJ services for couples who love music and want a fun, packed dancefloor ,without the clichés.",
+
+shortDescription:
+  "Modern, music-led wedding DJ services for couples who want a fun, packed dancefloor, without the clichés.",
+
+longDescription:
+  "At the LEDJS, we work with couples who genuinely love music and want their wedding to feel modern, energetic, and effortlessly cool. That could mean a full dancefloor to 90s and 00s nostalgia, deeper cuts that reflect your taste, a few perfectly timed classics to bring everyone together, or those tracks only your friendship group truly understands.\n\nYou know your guests better than anyone. We take your lead, shape the soundtrack around you, and use our experience to read the room, build momentum, and keep the energy exactly where it should be, from ceremony right through to the final song."
+,
     link: "/services#wedding-djs",
     gradient: "from-purple-600 to-pink-600",
     image: "/images/services/wedding-djs.jpg",
@@ -47,9 +50,9 @@ export const services = [
     id: "led-wristbands",
     title: "LED Wristband Experience",
     description:
-      "Transform your event into a mesmerizing light show with our cutting-edge LED wristband technology. Each wristband synchronizes wirelessly to create stunning visual effects that pulse, flash, and flow in perfect harmony with your music.",
+      "Transform your event into a mesmerising light show with our cutting-edge LED wristband technology. Each wristband synchronizes wirelessly to create stunning visual effects that pulse, flash, and flow in perfect harmony with your music.",
     shortDescription:
-      "Transform your event into a mesmerizing light show with synchronized LED wristbands.",
+      "Transform your event into a mesmerising light show with synchronised LED wristbands.",
     longDescription:
       "Our LED wristbands are perfect for enhancing your wedding, party or event. They create a unified visual experience that connects every guest, turning your audience into part of the show. With customizable colors and patterns, we can match any theme or brand.",
     link: "/services#led-wristbands",

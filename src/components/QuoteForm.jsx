@@ -1,5 +1,10 @@
 import { useState } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+
+const SERVICE_ID = 'service_ghxxdu9';
+const TEMPLATE_ID = 'template_gb174id';
+const PUBLIC_KEY = 'dIPJxUkcC66p2PCZM';
 
 const QuoteForm = () => {
   const [formData, setFormData] = useState({
@@ -73,21 +78,22 @@ const QuoteForm = () => {
 
     // Simulate form submission (replace with actual email service integration)
     try {
-      // Here you would integrate with EmailJS, Formspree, or Web3Forms
-      // Example with EmailJS:
-      // await emailjs.send('service_id', 'template_id', formData, 'public_key');
-
-      // For now, we'll simulate a successful submission
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      // Log form data to console (for demonstration)
-      console.log('Form submitted:', formData);
-
+      setStatus({ submitting: true, success: false, error: false });
+    
+      const response = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        formData,
+        { publicKey: PUBLIC_KEY }
+      );
+    
+      console.log('EmailJS Success:', response);
+    
       setStatus({
         submitting: false,
         success: true,
         error: false,
-        message: 'Thank you! We\'ve received your quote request and will get back to you within 24 hours.',
+        message: "Thank you! We've received your quote request and will get back to you within 24 hours.",
       });
 
       // Reset form
@@ -107,11 +113,13 @@ const QuoteForm = () => {
         setStatus({ submitting: false, success: false, error: false, message: '' });
       }, 5000);
     } catch (error) {
+      console.error('EmailJS Error:', error);
+
       setStatus({
         submitting: false,
         success: false,
         error: true,
-        message: 'Oops! Something went wrong. Please try again or contact us directly.',
+        message: 'Something went wrong. Please try again or contact us directly.',
       });
     }
   };
@@ -266,9 +274,9 @@ const QuoteForm = () => {
           }`}
         >
           {status.success ? (
-            <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+            <CheckCircle className="w-6 h-6 text-green-500 shrink-0 mt-0.5" />
           ) : (
-            <AlertCircle className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+            <AlertCircle className="w-6 h-6 text-red-500 shrink-0 mt-0.5" />
           )}
           <p className={status.success ? 'text-green-300' : 'text-red-300'}>
             {status.message}

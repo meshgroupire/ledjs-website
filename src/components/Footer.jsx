@@ -32,7 +32,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-2 rounded-lg">
+              <div className="bg-linear-to-r from-primary-500 to-secondary-500 p-2 rounded-lg">
                 <Zap className="w-6 h-6 text-white" />
               </div>
               <span className="text-xl font-bold gradient-text">LEDJS</span>
@@ -50,7 +50,7 @@ const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gray-800 p-3 rounded-lg hover:bg-gradient-to-r hover:from-primary-500 hover:to-secondary-500 transition-all duration-300 hover:scale-110"
+                    className="bg-gray-800 p-3 rounded-lg hover:bg-linear-to-r hover:from-primary-500 hover:to-secondary-500 transition-all duration-300 hover:scale-110"
                     aria-label={social.name}
                   >
                     <Icon className="w-5 h-5 text-white" />

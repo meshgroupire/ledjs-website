@@ -17,7 +17,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
-          <span className="text-white bg-clip-text bg-gradient-to-r from-secondary-400 to-secondary-500">
+          <span className="text-white bg-clip-text bg-linear-to-r from-secondary-400 to-secondary-500">
             The Party Starts 
             When We Press Play!          </span>
         </h1>

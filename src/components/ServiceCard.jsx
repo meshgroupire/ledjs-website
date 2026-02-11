@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
-const ServiceCard = ({ icon: Icon, title, description, features, link, gradient }) => {
+const ServiceCard = ({  title, description, features, link, gradient }) => {
   return (
     <div className="card group">
       {/* Icon with gradient background */}
-      <div className={`inline-flex p-4 rounded-lg mb-4 bg-gradient-to-br ${gradient}`}>
+      <div className={`inline-flex p-4 rounded-lg mb-4 bg-linear-to-br ${gradient}`}>
         <Icon className="w-8 h-8 text-white" />
       </div>
 
