@@ -1,12 +1,16 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import { Turnstile } from '@marsidev/react-turnstile';
 
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY;
 
 const QuoteForm = () => {
+  const turnstileRef = useRef(null);
+  const [captchaToken, setCaptchaToken] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -76,7 +80,18 @@ const QuoteForm = () => {
       return;
     }
 
-    // Simulate form submission (replace with actual email service integration)
+    // Captcha validation
+    if (!captchaToken) {
+      setStatus({
+        submitting: false,
+        success: false,
+        error: true,
+        message: 'Please complete the captcha verification.',
+      });
+      return;
+    }
+
+    // Form submission
     try {
       setStatus({ submitting: true, success: false, error: false });
     
@@ -108,7 +123,9 @@ const QuoteForm = () => {
         details: '',
       });
 
-      // Clear success message after 5 seconds
+      // Clear success message and reset captcha after 5 seconds
+      setCaptchaToken(null);
+      turnstileRef.current?.reset();
       setTimeout(() => {
         setStatus({ submitting: false, success: false, error: false, message: '' });
       }, 5000);
@@ -172,7 +189,7 @@ const QuoteForm = () => {
           value={formData.phone}
           onChange={handleInputChange}
           className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all"
-          placeholder="(123) 456-7890"
+          placeholder="(086) 123-4567"
         />
       </div>
 
@@ -263,6 +280,22 @@ const QuoteForm = () => {
           placeholder="Tell us more about your event and what you're looking for..."
         ></textarea>
       </div>
+
+      {/* Captcha */}
+      {TURNSTILE_SITE_KEY && (
+        <div>
+          <Turnstile
+            ref={turnstileRef}
+            siteKey={TURNSTILE_SITE_KEY}
+            onSuccess={(token) => setCaptchaToken(token)}
+            onExpire={() => setCaptchaToken(null)}
+            options={{
+              theme: 'dark',
+              size: 'normal',
+            }}
+          />
+        </div>
+      )}
 
       {/* Status Messages */}
       {status.message && (

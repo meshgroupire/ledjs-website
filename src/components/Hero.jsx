@@ -18,14 +18,12 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
           <span className="text-white bg-clip-text bg-linear-to-r from-secondary-400 to-secondary-500">
-            The Party Starts 
+            The Party Starts.. <br />
             When We Press Play!          </span>
         </h1>
 
         <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-          Transform your events with LED wristbands, speed quizzing, music
-          bingo, and karaoke. Create unforgettable experiences your guests will
-          love.
+        High-energy DJ entertainment with LED wristbands, speed quizzing, music bingo and karaoke. <br /> Turning your event into an unforgettable experience.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-20">

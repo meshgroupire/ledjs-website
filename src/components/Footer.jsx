@@ -2,12 +2,9 @@ import { Link } from "react-router-dom";
 import {
   Facebook,
   Instagram,
-  Twitter,
-  Youtube,
   Mail,
   Phone,
   MapPin,
-  Zap,
 } from "lucide-react";
 
 const Footer = () => {
@@ -31,12 +28,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand Section */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="bg-linear-to-r from-primary-500 to-secondary-500 p-2 rounded-lg">
-                <Zap className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xl font-bold gradient-text">LEDJS</span>
-            </div>
+            <Link to="/" className="inline-block mb-4">
+              <img
+                src="/images/logo.png"
+                alt="LEDJS Logo"
+                className="h-10 w-auto hover:opacity-90 transition-opacity"
+                onError={(e) => {
+                  e.target.src = "/images/logo.svg";
+                }}
+              />
+            </Link>
             <p className="text-gray-400 mb-4">
               Creating unforgettable interactive entertainment experiences for
               your special events.
@@ -98,7 +99,7 @@ const Footer = () => {
                   href="tel:+1234567890"
                   className="text-gray-400 hover:text-primary-500 transition-colors"
                 >
-                  (123) 456-7890
+                  (086) 895 7442
                 </a>
               </li>
               <li className="flex items-start space-x-3">
