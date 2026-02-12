@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Hero from "../components/Hero";
 import ServicesCarousel from "../components/ServicesCarousel";
 import {
@@ -56,6 +57,10 @@ const Home = () => {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#1C1C1C" }}>
+      <Helmet>
+        <title>LED JS - Interactive DJ Entertainment</title>
+        <meta name="description" content="LEDJS delivers interactive DJ entertainment with LED wristbands, speed quizzing, and music bingo. Creating unforgettable experiences for weddings, corporate events, and parties across Ireland." />
+      </Helmet>
       {/* Hero Section */}
       <Hero />
 

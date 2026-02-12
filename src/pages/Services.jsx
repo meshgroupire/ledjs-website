@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { services as servicesConfig } from "../config/services";
 
 const Services = () => {
@@ -6,6 +7,10 @@ const Services = () => {
 
   return (
     <div className="bg-gray-900 min-h-screen">
+      <Helmet>
+        <title>Our Services - LED Wristbands, Speed Quizzing & Music Bingo | LED JS</title>
+        <meta name="description" content="Discover LEDJS entertainment services: LED wristbands, speed quizzing, music bingo, and professional DJ services for weddings, corporate events, and celebrations in Ireland." />
+      </Helmet>
       {/* Page Header */}
       <section className="gradient-bg py-20">
         <div className="container mx-auto px-4 text-center">

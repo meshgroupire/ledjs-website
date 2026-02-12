@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import QuoteForm from "../components/QuoteForm";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
@@ -25,6 +26,10 @@ const Contact = () => {
 
   return (
     <div className="bg-gray-900 min-h-screen">
+      <Helmet>
+        <title>Get a Quote - Contact LEDJS | Free Event Quote Request</title>
+        <meta name="description" content="Request a free quote for your event. LEDJS offers LED wristbands, speed quizzing, music bingo, and DJ services. Get in touch - we respond within 24 hours." />
+      </Helmet>
       {/* Page Header */}
       <section className="gradient-bg py-20">
         <div className="container mx-auto px-4 text-center">

@@ -14,8 +14,8 @@ const Footer = () => {
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
     { name: "About", path: "/about" },
-    { name: "Get Quote", path: "/contact" },
-  ];
+    { name: "Contact Us", path: "/contact" },
+  ];  
 
   const socialLinks = [
     { name: "Facebook", icon: Facebook, url: "https://facebook.com" },

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   Award,
   Users,
@@ -74,6 +75,10 @@ const About = () => {
 
   return (
     <div className="bg-gray-900 min-h-screen">
+      <Helmet>
+        <title>About Us - LEDJS Interactive Entertainment | Longford, Ireland</title>
+        <meta name="description" content="Meet LEDJS - passionate about creating unforgettable interactive entertainment. LED wristbands, speed quizzing, music bingo, and DJ services for events across Ireland." />
+      </Helmet>
       {/* Page Header */}
       <section className="gradient-bg py-20">
         <div className="container mx-auto px-4 text-center">
