@@ -65,10 +65,10 @@ const Home = () => {
       <Hero />
 
       {/* Our Services Section - Sliding Banner */}
-      <section style={{ backgroundColor: "#1C1C1C" }}>
-        <div className="container mx-auto px-4 py-12">
+      <section style={{ backgroundColor: "#1C1C1C" }} className="overflow-x-clip">
+        <div className="container mx-auto px-4 sm:px-6 py-12 max-w-full">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+            <h2 className="text-[clamp(1.5rem,5vw,2.5rem)] sm:text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
               Our Services
             </h2>
           </div>
@@ -93,7 +93,7 @@ const Home = () => {
               <Star className="w-6 h-6 fill-current text-secondary-500" />
               <Star className="w-6 h-6 fill-current text-secondary-500" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+            <h2 className="text-[clamp(1.5rem,5vw,2.5rem)] sm:text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight text-center px-2">
               What Our Customers Are Saying
             </h2>
           </div>
@@ -129,11 +129,11 @@ const Home = () => {
         className="section-padding"
         style={{ backgroundColor: "#1C1C1C" }}
       >
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+        <div className="container mx-auto text-center px-5 sm:px-6">
+          <h2 className="text-[clamp(1.5rem,5vw,2rem)] sm:text-3xl md:text-4xl font-bold text-white mb-6 break-words">
             One Chance To Get It Right!
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+          <p className="text-[clamp(0.875rem,3vw,1rem)] sm:text-xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
             Whatever event you are hosting, the entertainment can make or break
             it. Choose well with the LEDJS, where we are committed to providing
             the best entertainment for your event.

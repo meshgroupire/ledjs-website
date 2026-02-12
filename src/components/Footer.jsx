@@ -6,10 +6,8 @@ import {
   Phone,
   MapPin,
 } from "lucide-react";
-import { useCookieConsent } from "../contexts/CookieConsent";
 
 const Footer = () => {
-  const { hasConsent, openBanner } = useCookieConsent();
   const currentYear = new Date().getFullYear();
 
   const navLinks = [
@@ -26,7 +24,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 border-t border-gray-800">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-5 sm:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand Section */}
           <div>
@@ -89,10 +87,10 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-primary-500 mt-0.5" />
                 <a
-                  href="mailto:dave@theleds.ie"
+                  href="mailto:dave@theledjs.ie"
                   className="text-gray-400 hover:text-primary-500 transition-colors"
                 >
-                  dave@theleds.ie
+                  info@theledjs.ie
                 </a>
               </li>
               <li className="flex items-start space-x-3">
@@ -113,20 +111,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>
-            &copy; {currentYear} LEDJS. All rights reserved.
-            {hasConsent !== null && (
-              <>
-                {" · "}
-                <button
-                  onClick={openBanner}
-                  className="hover:text-primary-500 transition-colors underline"
-                >
-                  Cookie settings
-                </button>
-              </>
-            )}
-          </p>
+          <p>&copy; {currentYear} LEDJS. All rights reserved.</p>
         </div>
       </div>
     </footer>

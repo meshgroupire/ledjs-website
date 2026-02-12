@@ -9,6 +9,7 @@ import {
   Star,
   Quote,
 } from "lucide-react";
+import ClientsCarousel from "../components/ClientsCarousel";
 
 const About = () => {
   const values = [
@@ -80,12 +81,12 @@ const About = () => {
         <meta name="description" content="Meet LEDJS - passionate about creating unforgettable interactive entertainment. LED wristbands, speed quizzing, music bingo, and DJ services for events across Ireland." />
       </Helmet>
       {/* Page Header */}
-      <section className="gradient-bg py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+      <section className="gradient-bg py-16 sm:py-20">
+        <div className="container mx-auto px-5 sm:px-6 text-center">
+          <h1 className="text-[clamp(1.75rem,5vw,3rem)] sm:text-5xl md:text-6xl font-bold text-white mb-6 break-words">
             About LEDJs
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-[clamp(0.875rem,3vw,1rem)] sm:text-xl text-white/90 max-w-3xl mx-auto">
             Creating unforgettable experiences one event at a time.
           </p>
         </div>
@@ -93,10 +94,10 @@ const About = () => {
 
       {/* Our Story Section */}
       <section className="section-padding bg-gray-900">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-5 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-white mb-6">Our Story</h2>
+              <h2 className="text-[clamp(1.5rem,5vw,2.25rem)] sm:text-4xl font-bold text-white mb-6 break-words">Our Story</h2>
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p>
                   The LEDJs was born from a simple belief, that events should be
@@ -139,25 +140,14 @@ const About = () => {
       </section>
 
       <section className="section-padding bg-gray-800">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-5 sm:px-6">
           <div className="text-center mb-10">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-[clamp(1.5rem,5vw,2.5rem)] sm:text-4xl md:text-5xl font-bold text-white mb-4">
               Some of our valued clients
             </h2>
           </div>
-          <div className="flex items-center gap-12 overflow-x-auto no-scrollbar">
-            {clients.map((client, index) => (
-              <div
-                key={index}
-                className="shrink-0 flex items-center justify-center h-32"
-              >
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  className="h-96 md:h-96 lg:h-28 object-contain grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition"
-                />
-              </div>
-            ))}
+          <div className="relative max-w-2xl mx-auto">
+            <ClientsCarousel clients={clients} />
           </div>
         </div>
       </section>

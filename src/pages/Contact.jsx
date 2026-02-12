@@ -7,8 +7,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "dave@theleds.ie",
-      link: "mailto:dave@theleds.ie",
+      value: "info@theledjs.ie",
+      link: "mailto:dave@theledjs.ie",
     },
     {
       icon: MapPin,
@@ -31,12 +31,12 @@ const Contact = () => {
         <meta name="description" content="Request a free quote for your event. LEDJS offers LED wristbands, speed quizzing, music bingo, and DJ services. Get in touch - we respond within 24 hours." />
       </Helmet>
       {/* Page Header */}
-      <section className="gradient-bg py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+      <section className="gradient-bg py-16 sm:py-20">
+        <div className="container mx-auto px-5 sm:px-6 text-center">
+          <h1 className="text-[clamp(1.75rem,5vw,3rem)] sm:text-5xl md:text-6xl font-bold text-white mb-6 break-words">
             Get Your Free Quote
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-[clamp(0.875rem,3vw,1rem)] sm:text-xl text-white/90 max-w-3xl mx-auto">
             Tell us about your event and we'll create a custom package just for
             you
           </p>
@@ -45,7 +45,7 @@ const Contact = () => {
 
       {/* Contact Form and Info Section */}
       <section className="section-padding bg-gray-900">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-5 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Info */}
             <div className="lg:col-span-1">
@@ -100,7 +100,7 @@ const Contact = () => {
 
             {/* Quote Form */}
             <div className="lg:col-span-2">
-              <div className="bg-gray-800 rounded-xl p-8 shadow-2xl">
+              <div className="bg-gray-800 rounded-xl p-5 sm:p-6 md:p-8 shadow-2xl">
                 <h2 className="text-3xl font-bold text-white mb-2">
                   Request a Quote
                 </h2>
@@ -117,9 +117,9 @@ const Contact = () => {
 
       {/* FAQ Section */}
       <section className="section-padding bg-gray-800">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-5 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">
+            <h2 className="text-[clamp(1.5rem,5vw,2.25rem)] sm:text-4xl font-bold text-white mb-4 break-words">
               Frequently Asked Questions
             </h2>
             <p className="text-xl text-gray-400">

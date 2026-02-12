@@ -12,12 +12,12 @@ const Services = () => {
         <meta name="description" content="Discover LEDJS entertainment services: LED wristbands, speed quizzing, music bingo, and professional DJ services for weddings, corporate events, and celebrations in Ireland." />
       </Helmet>
       {/* Page Header */}
-      <section className="gradient-bg py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+      <section className="gradient-bg py-16 sm:py-20">
+        <div className="container mx-auto px-5 sm:px-6 text-center">
+          <h1 className="text-[clamp(1.75rem,5vw,3rem)] sm:text-5xl md:text-6xl font-bold text-white mb-6 break-words">
             Our Services
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-[clamp(0.875rem,3vw,1rem)] sm:text-xl text-white/90 max-w-3xl mx-auto">
             Discover our range of interactive entertainment solutions designed
             to create unforgettable experiences
           </p>
@@ -38,7 +38,7 @@ const Services = () => {
           >
             <div className="container mx-auto">
               <div
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center ${
                   !isEven ? "lg:flex-row-reverse" : ""
                 }`}
               >
@@ -48,7 +48,7 @@ const Services = () => {
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-auto min-h-[400px] object-cover"
+                      className="w-full h-auto min-h-[280px] sm:min-h-[350px] md:min-h-[400px] object-cover max-w-full"
                       onError={(e) => {
                         e.target.style.display = "none";
                         const parent = e.target.parentElement;
@@ -71,11 +71,11 @@ const Services = () => {
 
                 {/* Content */}
                 <div className={`${!isEven ? "lg:order-1" : ""}`}>
-                  <h2 className="text-4xl font-bold text-white mb-4">
+                  <h2 className="text-[clamp(1.5rem,5vw,2.25rem)] sm:text-4xl font-bold text-white mb-4 break-words">
                     {service.title}
                   </h2>
 
-                  <p className="text-lg text-gray-300 mb-4 leading-relaxed">
+                  <p className="text-[clamp(0.875rem,3vw,1rem)] sm:text-lg text-gray-300 mb-4 leading-relaxed">
                     {service.description}
                   </p>
 
@@ -115,11 +115,11 @@ const Services = () => {
 
       {/* CTA Section */}
       <section className="section-padding gradient-bg">
-        <div className="container mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <div className="container mx-auto text-center px-5 sm:px-6">
+          <h2 className="text-[clamp(1.5rem,5vw,2.5rem)] sm:text-4xl md:text-5xl font-bold text-white mb-6 break-words">
             Let's Create Something Amazing Together
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-[clamp(0.875rem,3vw,1rem)] sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Mix and match our services or choose a complete package. We'll
             customize everything to fit your event perfectly.
           </p>

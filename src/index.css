@@ -5,8 +5,18 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Mobile-first: prevent horizontal scroll */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -20,10 +30,14 @@ body {
   color: #ffffff;
   line-height: 1.7;
   letter-spacing: 0.01em;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 #root {
   min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
   background-color: #1c1c1c; /* Very Dark Grey - Elite DJs style */
 }
 
@@ -109,8 +123,15 @@ body {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Mobile-first section padding (min 20px sides) */
 .section-padding {
-  padding: 5rem 1rem;
+  padding: 3rem 1.25rem; /* 20px min on mobile */
+}
+
+@media (min-width: 480px) {
+  .section-padding {
+    padding: 4rem 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -124,6 +145,20 @@ body {
     padding: 7rem 4rem;
   }
 }
+
+/* Responsive typography - carousel & headings */
+.carousel-heading {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  line-height: 1.2;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.carousel-body {
+  font-size: clamp(0.875rem, 3vw, 1rem);
+  line-height: 1.5;
+}
+
 
 /* Typography refinements */
 h1,

@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Wedding DJ Questionnaire</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            color: #764ba2;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .intro {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="time"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .checkbox-group,
+        .radio-group {
+            margin-top: 10px;
+        }
+        
+        .checkbox-item,
+        .radio-item {
+            margin-bottom: 8px;
+        }
+        
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 8px;
+        }
+        
+        .help-text {
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+        
+        .section-note {
+            background: #fff9e6;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 30px;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pre-Wedding DJ Questionnaire</h1>
+        <p class="subtitle">Let's make your special day unforgettable!</p>
+        
+        <div class="intro">
+            <p><strong>Thank you for choosing us for your wedding entertainment!</strong></p>
+            <p>This questionnaire helps us understand your vision and preferences so we can create the perfect atmosphere for your celebration. Please complete this form at least 2-3 weeks before your wedding date. Don't worry if you don't have all the answers right now – we can refine the details together!</p>
+        </div>
+
+        <form id="weddingForm">
+            <!-- SECTION 1: COUPLE & EVENT DETAILS -->
+            <h2>1. Couple & Event Details</h2>
+            
+            <div class="two-column">
+                <div class="form-group">
+                    <label for="brideName">Bride's Full Name *</label>
+                    <input type="text" id="brideName" name="brideName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="groomName">Groom's Full Name *</label>
+                    <input type="text" id="groomName" name="groomName" required>
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <div class="form-group">
+                    <label for="email">Contact Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Contact Phone *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="pronounceBride">How to Pronounce Bride's Name (if not obvious)</label>
+                <input type="text" id="pronounceBride" name="pronounceBride">
+            </div>
+            
+            <div class="form-group">
+                <label for="pronounceGroom">How to Pronounce Groom's Name (if not obvious)</label>
+                <input type="text" id="pronounceGroom" name="pronounceGroom">
+            </div>
+            
+            <div class="two-column">
+                <div class="form-group">
+                    <label for="weddingDate">Wedding Date *</label>
+                    <input type="date" id="weddingDate" name="weddingDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guestCount">Expected Guest Count *</label>
+                    <input type="number" id="guestCount" name="guestCount" min="1" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="venueName">Venue Name *</label>
+                <input type="text" id="venueName" name="venueName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="venueAddress">Venue Address *</label>
+                <input type="text" id="venueAddress" name="venueAddress" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="venueContact">Venue Contact Person & Phone</label>
+                <input type="text" id="venueContact" name="venueContact">
+            </div>
+
+            <!-- SECTION 2: TIMELINE -->
+            <h2>2. Event Timeline</h2>
+            
+            <div class="section-note">
+                <strong>Note:</strong> Please provide your best estimate of timings. We'll coordinate with your venue and wedding coordinator to finalize the schedule.
+            </div>
+            
+            <h3>Ceremony (if DJ services required)</h3>
+            
+            <div class="form-group">
+                <label>Will DJ be providing ceremony music?</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="ceremonyYes" name="ceremonyMusic" value="yes">
+                        <label for="ceremonyYes" style="display: inline;">Yes</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="ceremonyNo" name="ceremonyMusic" value="no">
+                        <label for="ceremonyNo" style="display: inline;">No</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <div class="form-group">
+                    <label for="ceremonyStart">Ceremony Start Time</label>
+                    <input type="time" id="ceremonyStart" name="ceremonyStart">
+                </div>
+                
+                <div class="form-group">
+                    <label for="ceremonyLocation">Ceremony Location</label>
+                    <input type="text" id="ceremonyLocation" name="ceremonyLocation" placeholder="e.g., Church name or outdoor location">
+                </div>
+            </div>
+            
+            <h3>Reception Timeline</h3>
+            
+            <div class="form-group">
+                <label for="receptionStart">Reception Start Time *</label>
+                <input type="time" id="receptionStart" name="receptionStart" required>
+                <p class="help-text">When guests will arrive at the reception venue</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="drinksReception">Drinks Reception Start Time</label>
+                <input type="time" id="drinksReception" name="drinksReception">
+                <p class="help-text">If you're having a drinks reception while photos are being taken</p>
+            </div>
+            
+            <div class="two-column">
+                <div class="form-group">
+                    <label for="dinnerStart">Meal Service Time</label>
+                    <input type="time" id="dinnerStart" name="dinnerStart">
+                </div>
+                
+                <div class="form-group">
+                    <label for="speechesTime">Speeches Time</label>
+                    <input type="time" id="speechesTime" name="speechesTime">
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <div class="form-group">
+                    <label for="firstDance">First Dance Time</label>
+                    <input type="time" id="firstDance" name="firstDance">
+                </div>
+                
+                <div class="form-group">
+                    <label for="cakeCutting">Cake Cutting Time</label>
+                    <input type="time" id="cakeCutting" name="cakeCutting">
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <div class="form-group">
+                    <label for="aftersStart">"Afters" Start Time (if applicable)</label>
+                    <input type="time" id="aftersStart" name="aftersStart">
+                    <p class="help-text">When evening guests arrive</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="receptionEnd">Reception End Time *</label>
+                    <input type="time" id="receptionEnd" name="receptionEnd" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="dinnerStyle">Meal Service Style</label>
+                <select id="dinnerStyle" name="dinnerStyle">
+                    <option value="">Select...</option>
+                    <option value="plated">Plated/Sit-down Service</option>
+                    <option value="buffet">Buffet</option>
+                    <option value="carvery">Carvery</option>
+                    <option value="family">Family Style</option>
+                    <option value="stations">Food Stations</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Should DJ announce when guests can approach buffet/food stations?</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="announceYes" name="announceFood" value="yes">
+                        <label for="announceYes" style="display: inline;">Yes</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="announceNo" name="announceFood" value="no">
+                        <label for="announceNo" style="display: inline;">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: INTRODUCTIONS & ANNOUNCEMENTS -->
+            <h2>3. Introductions & Special Announcements</h2>
+            
+            <div class="form-group">
+                <label for="introStyle">How would you like to be introduced as a married couple? *</label>
+                <input type="text" id="introStyle" name="introStyle" placeholder="e.g., Mr. and Mrs. Smith, John and Mary Smith, etc." required>
+                <p class="help-text">This is how we'll announce you when you enter the reception</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="bridalParty">Bridal Party Members (Names & Pronunciations)</label>
+                <textarea id="bridalParty" name="bridalParty" placeholder="List each member with their role, e.g.:&#10;Best Man: Michael O'Brien (O-BRY-an)&#10;Maid of Honour: Sarah Murphy&#10;Groomsman: Patrick Fitzgerald (Fitz-JERR-ald)"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Would you like the bridal party introduced when entering the reception?</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="partyIntroYes" name="partyIntro" value="yes">
+                        <label for="partyIntroYes" style="display: inline;">Yes</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="partyIntroNo" name="partyIntro" value="no">
+                        <label for="partyIntroNo" style="display: inline;">No</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="speechOrder">Order of Speeches/Toasts</label>
+                <textarea id="speechOrder" name="speechOrder" placeholder="Please list in order, e.g.:&#10;1. Father of the Bride&#10;2. Best Man&#10;3. Maid of Honour&#10;4. Groom"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="gracePerson">Will someone be saying Grace before the meal?</label>
+                <input type="text" id="gracePerson" name="gracePerson" placeholder="If yes, who?">
+            </div>
+
+            <!-- SECTION 4: MUSIC PREFERENCES -->
+            <h2>4. Music Preferences & Atmosphere</h2>
+            
+            <div class="form-group">
+                <label for="musicStyle">Overall Music Style/Vibe You're After</label>
+                <textarea id="musicStyle" name="musicStyle" placeholder="e.g., Mix of classic and modern hits, heavy on 80s/90s, lots of Irish trad, dance/electronic focused, etc."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>What's your priority for the reception?</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="priority1" name="priorities" value="packed_dancefloor">
+                        <label for="priority1" style="display: inline;">Packed dance floor all night</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="priority2" name="priorities" value="background_ambience">
+                        <label for="priority2" style="display: inline;">Nice background ambience for conversation</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="priority3" name="priorities" value="varied_ages">
+                        <label for="priority3" style="display: inline;">Music that pleases all age groups</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="priority4" name="priorities" value="specific_style">
+                        <label for="priority4" style="display: inline;">Stick to our specific style/genre</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="guestDemographic">Guest Demographics & Musical Tastes</label>
+                <textarea id="guestDemographic" name="guestDemographic" placeholder="Tell us about your guests - age ranges, cultural backgrounds, musical preferences. This helps us read the room!"></textarea>
+            </div>
+            
+            <h3>🎵 Ceremony Music (if applicable)</h3>
+            
+            <div class="form-group">
+                <label for="preludeSongs">Prelude Music (as guests arrive)</label>
+                <textarea id="preludeSongs" name="preludeSongs" placeholder="Song titles and artists"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="processionalSong">Processional Song (bridal party entrance)</label>
+                <input type="text" id="processionalSong" name="processionalSong" placeholder="Song title and artist">
+            </div>
+            
+            <div class="form-group">
+                <label for="bridalEntranceSong">Bridal Entrance Song</label>
+                <input type="text" id="bridalEntranceSong" name="bridalEntranceSong" placeholder="Song title and artist">
+            </div>
+            
+            <div class="form-group">
+                <label for="signingRegister">Signing of Register Music</label>
+                <input type="text" id="signingRegister" name="signingRegister" placeholder="Song title and artist">
+            </div>
+            
+            <div class="form-group">
+                <label for="recessionalSong">Recessional Song (exit as married couple)</label>
+                <input type="text" id="recessionalSong" name="recessionalSong" placeholder="Song title and artist">
+            </div>
+            
+            <h3>🥂 Drinks Reception & Background Music</h3>
+            
+            <div class="form-group">
+                <label for="drinksReceptionStyle">Drinks Reception Music Style (while photos are being taken)</label>
+                <select id="drinksReceptionStyle" name="drinksReceptionStyle">
+                    <option value="">Select preferred style...</option>
+                    <option value="jazz">Jazz Standards</option>
+                    <option value="acoustic">Acoustic/Singer-Songwriter</option>
+                    <option value="classical">Classical</option>
+                    <option value="irish_trad">Irish Traditional</option>
+                    <option value="lounge">Lounge/Chill</option>
+                    <option value="soft_pop">Soft Pop/Rock</option>
+                    <option value="dj_choice">DJ's Choice</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="drinksReceptionSpecific">Specific Drinks Reception Song Requests</label>
+                <textarea id="drinksReceptionSpecific" name="drinksReceptionSpecific" placeholder="Any specific songs or artists you'd like during drinks reception?"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="dinnerStyleMusic">Meal Music Style</label>
+                <select id="dinnerStyleMusic" name="dinnerStyleMusic">
+                    <option value="">Select preferred style...</option>
+                    <option value="similar_drinks">Similar to drinks reception</option>
+                    <option value="upbeat_background">Upbeat background music</option>
+                    <option value="romantic">Romantic/Love songs</option>
+                    <option value="irish">Irish music mix</option>
+                    <option value="dj_choice">DJ's Choice</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="dinnerSpecific">Specific Meal Music Requests</label>
+                <textarea id="dinnerSpecific" name="dinnerSpecific" placeholder="Any specific songs or artists for the meal?"></textarea>
+            </div>
+            
+            <h3>💃 First Dance & Special Dances</h3>
+            
+            <div class="form-group">
+                <label>Are you having evening guests ("afters")?</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="aftersYes" name="afters" value="yes">
+                        <label for="aftersYes" style="display: inline;">Yes</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="aftersNo" name="afters" value="no">
+                        <label for="aftersNo" style="display: inline;">No</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="aftersCount">Approximate number of evening guests</label>
+                <input type="number" id="aftersCount" name="aftersCount" min="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="aftersMusic">Music preferences when evening guests arrive?</label>
+                <textarea id="aftersMusic" name="aftersMusic" placeholder="e.g., Ramp up the energy, more Irish music, same vibe as before, etc."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="firstDanceSong">First Dance Song *</label>
+                <input type="text" id="firstDanceSong" name="firstDanceSong" placeholder="Song title and artist" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="firstDanceVersion">Specific version? (original, cover, instrumental, etc.)</label>
+                <input type="text" id="firstDanceVersion" name="firstDanceVersion">
+            </div>
+            
+            <div class="form-group">
+                <label for="firstDanceEdit">Any special instructions for first dance?</label>
+                <textarea id="firstDanceEdit" name="firstDanceEdit" placeholder="e.g., Fade out after 2 minutes, play full song, start from 0:30, etc."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="parentDances">Parent Dances</label>
+                <textarea id="parentDances" name="parentDances" placeholder="e.g.:&#10;Bride & Father: 'Isn't She Lovely' - Stevie Wonder&#10;Groom & Mother: 'A Song for Mama' - Boyz II Men"></textarea>
+            </div>
+            
+            <h3>🎉 Dance Floor - Must-Play Songs</h3>
+            
+            <div class="section-note">
+                <strong>Must-Play List:</strong> These are songs we absolutely MUST play during the dancing portion. We'll work them into the flow of the evening.
+            </div>
+            
+            <div class="form-group">
+                <label for="mustPlaySongs">Must-Play Songs</label>
+                <textarea id="mustPlaySongs" name="mustPlaySongs" rows="8" placeholder="List your essential songs with artist names, e.g.:&#10;- Mr. Brightside - The Killers&#10;- Galway Girl - Steve Earle&#10;- Don't Stop Believin' - Journey&#10;- Maniac 2000 - Mark McCabe"></textarea>
+            </div>
+            
+            <h3>🎊 Play If Possible</h3>
+            
+            <div class="form-group">
+                <label for="playIfPossible">Play If Possible (we'll fit these in if the vibe is right)</label>
+                <textarea id="playIfPossible" name="playIfPossible" rows="6" placeholder="Songs you'd love to hear but aren't absolute essentials"></textarea>
+            </div>
+            
+            <h3>🚫 DO NOT PLAY LIST</h3>
+            
+            <div class="section-note">
+                <strong>Important:</strong> Please list any songs, artists, or genres you absolutely DO NOT want played at your wedding. This helps us avoid any awkward moments!
+            </div>
+            
+            <div class="form-group">
+                <label for="doNotPlay">DO NOT Play - Songs/Artists/Genres</label>
+                <textarea id="doNotPlay" name="doNotPlay" rows="6" placeholder="e.g.:&#10;- No country music&#10;- No heavy metal&#10;- No 'Cotton Eye Joe'&#10;- No Ed Sheeran&#10;- No [specific artist or song that has bad memories]"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="explicitContent">What's your preference on explicit content/language in songs?</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="explicit1" name="explicitContent" value="clean_only">
+                        <label for="explicit1" style="display: inline;">Clean versions only</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="explicit2" name="explicitContent" value="mild_ok">
+                        <label for="explicit2" style="display: inline;">Mild language okay (radio edits fine)</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="explicit3" name="explicitContent" value="no_restrictions">
+                        <label for="explicit3" style="display: inline;">No restrictions</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 5: SPECIAL MOMENTS -->
+            <h2>5. Special Moments & Traditions</h2>
+            
+            <div class="form-group">
+                <label>Will you be having any of these traditional moments?</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="tradition1" name="traditions" value="bouquet_toss">
+                        <label for="tradition1" style="display: inline;">Bouquet Toss</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="tradition2" name="traditions" value="garter_toss">
+                        <label for="tradition2" style="display: inline;">Garter Toss</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="tradition3" name="traditions" value="anniversary_dance">
+                        <label for="tradition3" style="display: inline;">Anniversary Dance</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="tradition4" name="traditions" value="grand_march">
+                        <label for="tradition4" style="display: inline;">Grand March (Irish tradition)</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="bouquetSong">Bouquet Toss Song</label>
+                <input type="text" id="bouquetSong" name="bouquetSong" placeholder="Song for bouquet toss">
+            </div>
+            
+            <div class="form-group">
+                <label for="garter Song">Garter Toss Song</label>
+                <input type="text" id="garterSong" name="garterSong" placeholder="Song for garter toss">
+            </div>
+            
+            <div class="form-group">
+                <label for="lastDanceSong">Last Dance Song</label>
+                <input type="text" id="lastDanceSong" name="lastDanceSong" placeholder="The final song of the night">
+            </div>
+            
+            <div class="form-group">
+                <label for="specialDedications">Special Song Dedications or Tributes</label>
+                <textarea id="specialDedications" name="specialDedications" placeholder="e.g., A special song for grandparents, tribute to someone who passed, anniversary celebration for parents"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="surprises">Any Special Surprises or Performances?</label>
+                <textarea id="surprises" name="surprises" placeholder="e.g., Flash mob, surprise dance performance, special guest singer, etc. We need to know so we can coordinate!"></textarea>
+            </div>
+
+            <!-- SECTION 6: MC STYLE & GUEST INTERACTION -->
+            <h2>6. MC Style & Guest Interaction</h2>
+            
+            <div class="form-group">
+                <label for="mcStyle">What's your preferred MC/DJ personality style?</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="mc1" name="mcStyle" value="high_energy">
+                        <label for="mc1" style="display: inline;">High energy, interactive, gets people hyped</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="mc2" name="mcStyle" value="professional">
+                        <label for="mc2" style="display: inline;">Professional, smooth, minimal chatter</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="mc3" name="mcStyle" value="fun_engaging">
+                        <label for="mc3" style="display: inline;">Fun and engaging but not over-the-top</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="mc4" name="mcStyle" value="background">
+                        <label for="mc4" style="display: inline;">Stay in the background, let music do the talking</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Guest Requests - How should we handle them?</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="requests1" name="guestRequests" value="take_all">
+                        <label for="requests1" style="display: inline;">Take all requests (great for getting people engaged)</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="requests2" name="guestRequests" value="selective">
+                        <label for="requests2" style="display: inline;">Take requests but be selective (DJ discretion based on vibe)</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="requests3" name="guestRequests" value="no_requests">
+                        <label for="requests3" style="display: inline;">No guest requests - stick to our plan</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="danceFloorStrategy">If the dance floor empties, what's your preference?</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="strategy1" name="danceStrategy" value="whatever_it_takes">
+                        <label for="strategy1" style="display: inline;">Do whatever it takes - group dances, line dances, get interactive</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="strategy2" name="danceStrategy" value="music_only">
+                        <label for="strategy2" style="display: inline;">Change up the music style, but no gimmicks</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="strategy3" name="danceStrategy" value="relaxed">
+                        <label for="strategy3" style="display: inline;">Keep it relaxed - not everyone needs to dance constantly</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Are you okay with interactive elements?</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="interactive1" name="interactive" value="line_dances">
+                        <label for="interactive1" style="display: inline;">Line dances (Cha Cha Slide, Cupid Shuffle, etc.)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="interactive2" name="interactive" value="group_dances">
+                        <label for="interactive2" style="display: inline;">Group dances (Siege of Ennis, Walls of Limerick, etc.)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="interactive3" name="interactive" value="games">
+                        <label for="interactive3" style="display: inline;">Fun games or competitions</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="interactive4" name="interactive" value="none">
+                        <label for="interactive4" style="display: inline;">None - just music and dancing</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 7: TECHNICAL & LOGISTICS -->
+            <h2>7. Technical Details & Logistics</h2>
+            
+            <div class="form-group">
+                <label>Is there another band or entertainment before/after DJ set?</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="otherEntYes" name="otherEntertainment" value="yes">
+                        <label for="otherEntYes" style="display: inline;">Yes</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="otherEntNo" name="otherEntertainment" value="no">
+                        <label for="otherEntNo" style="display: inline;">No</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="otherEntDetails">If yes, please provide details</label>
+                <input type="text" id="otherEntDetails" name="otherEntDetails" placeholder="Band name, their set times, etc.">
+            </div>
+            
+            <div class="form-group">
+                <label for="coordinator">Wedding Coordinator Name & Contact</label>
+                <input type="text" id="coordinator" name="coordinator" placeholder="If you have one">
+            </div>
+            
+            <div class="form-group">
+                <label for="pointPerson">Who is the main point person on the day?</label>
+                <input type="text" id="pointPerson" name="pointPerson" placeholder="Name and phone number">
+            </div>
+            
+            <div class="form-group">
+                <label for="venueRestrictions">Any Venue Restrictions or Special Requirements?</label>
+                <textarea id="venueRestrictions" name="venueRestrictions" placeholder="e.g., Sound limits, setup restrictions, outdoor backup plan, specific load-in times"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Will you need any additional services?</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="addon1" name="addons" value="uplighting">
+                        <label for="addon1" style="display: inline;">Uplighting</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="addon2" name="addons" value="photo_booth">
+                        <label for="addon2" style="display: inline;">Photo Booth</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="addon3" name="addons" value="led_wristbands">
+                        <label for="addon3" style="display: inline;">LED Wristbands</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="addon4" name="addons" value="special_effects">
+                        <label for="addon4" style="display: inline;">Special Effects (cold sparklers, etc.)</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 8: FINAL DETAILS -->
+            <h2>8. Additional Information</h2>
+            
+            <div class="form-group">
+                <label for="inspirations">Musical Inspirations or Reference Playlists</label>
+                <textarea id="inspirations" name="inspirations" placeholder="Share any Spotify playlists, YouTube links, or other weddings you've attended that had great music"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="concerns">Any Concerns or Special Considerations?</label>
+                <textarea id="concerns" name="concerns" placeholder="Anything we should be aware of? Family dynamics, sensitive topics, guest considerations, etc."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="dreamVibe">Describe Your Dream Reception in 3-5 Words</label>
+                <input type="text" id="dreamVibe" name="dreamVibe" placeholder="e.g., Fun, energetic, classy, emotional, wild party">
+            </div>
+            
+            <div class="form-group">
+                <label for="additionalNotes">Anything Else We Should Know?</label>
+                <textarea id="additionalNotes" name="additionalNotes" placeholder="Any other details, ideas, or thoughts you'd like to share"></textarea>
+            </div>
+
+            <button type="submit">Submit Questionnaire</button>
+        </form>
+        
+        <div style="margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 5px; text-align: center;">
+            <p><strong>Thank you for taking the time to complete this questionnaire!</strong></p>
+            <p style="margin-top: 10px;">We'll review your responses and be in touch within 48 hours to discuss the details and finalize your perfect wedding soundtrack.</p>
+            <p style="margin-top: 10px; font-style: italic;">Remember: This is a guide, not a contract. We can adjust anything as we get closer to your big day!</p>
+        </div>
+    </div>
+
+    <script>
+        // Basic form handling - you can expand this to actually submit the form
+        document.getElementById('weddingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form submitted! In production, this would send the data to your backend or email.');
+            // Here you would typically:
+            // 1. Collect form data
+            // 2. Send to your backend/database
+            // 3. Send confirmation email to couple
+            // 4. Redirect to thank you page
+        });
+    </script>
+</body>
+</html>

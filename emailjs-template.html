@@ -1,0 +1,58 @@
+<!-- LEDJS Branded Email Template for EmailJS -->
+<!-- Paste this into your EmailJS template editor (Email Templates > Your Template > HTML) -->
+<!-- Variables: {{name}}, {{email}}, {{phone}}, {{eventDate}}, {{eventType}}, {{services}}, {{guests}}, {{details}} -->
+<!-- Optional: Add {{time}} to your form submission for timestamp -->
+
+<div style="font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.6; color: #e5e5e5; background-color: #1C1C1C; padding: 24px; max-width: 600px; margin: 0 auto;">
+  
+  <!-- LEDJS Brand Header -->
+  <div style="background: linear-gradient(135deg, #135658 0%, #0f4446 50%, #1e7d7f 100%); padding: 20px 24px; border-radius: 8px 8px 0 0; margin-bottom: 0;">
+    <div style="color: #D8B382; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">New Quote Request</div>
+    <div style="color: #ffffff; font-size: 18px; font-weight: 700;">LEDJS</div>
+  </div>
+
+  <!-- Main Message -->
+  <div style="background-color: #252525; border: 1px solid #135658; border-top: none; padding: 24px; border-radius: 0 0 8px 8px;">
+    <p style="color: #e5e5e5; margin: 0 0 20px 0; font-size: 15px;">
+      A message from <strong style="color: #D8B382;">{{name}}</strong> has been received. Kindly respond at your earliest convenience.
+    </p>
+
+    <!-- Message Card -->
+    <div style="margin: 20px 0; padding: 20px; background-color: #1C1C1C; border-left: 4px solid #135658; border-radius: 0 6px 6px 0;">
+      <table role="presentation" cellpadding="0" cellspacing="0" style="width: 100%;">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; width: 50px;">
+              <div style="width: 44px; height: 44px; background-color: #0f4446; border-radius: 8px; text-align: center; line-height: 44px; font-size: 24px;">&#128100;</div>
+            </td>
+            <td style="vertical-align: top; padding-left: 16px;">
+              <div style="color: #D8B382; font-size: 18px; font-weight: 600; margin-bottom: 4px;">{{name}}</div>
+              <div style="color: #888888; font-size: 13px; margin-bottom: 2px;">{{time}}</div>
+              <div style="color: #888888; font-size: 13px; margin-bottom: 12px;">{{email}}</div>
+              <p style="color: #e5e5e5; font-size: 15px; margin: 0; line-height: 1.6;">{{details}}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Quote Details -->
+    <div style="margin-top: 24px; padding-top: 20px; border-top: 1px dashed #135658;">
+      <div style="color: #D8B382; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; margin-bottom: 12px;">Event Details</div>
+      <table role="presentation" cellpadding="0" cellspacing="0" style="width: 100%; color: #e5e5e5; font-size: 14px;">
+        <tr><td style="padding: 6px 0; color: #888888;">Email</td><td style="padding: 6px 0;">{{email}}</td></tr>
+        <tr><td style="padding: 6px 0; color: #888888;">Phone</td><td style="padding: 6px 0;">{{phone}}</td></tr>
+        <tr><td style="padding: 6px 0; color: #888888;">Event Date</td><td style="padding: 6px 0;">{{eventDate}}</td></tr>
+        <tr><td style="padding: 6px 0; color: #888888;">Event Type</td><td style="padding: 6px 0;">{{eventType}}</td></tr>
+        <tr><td style="padding: 6px 0; color: #888888;">Services</td><td style="padding: 6px 0;">{{services}}</td></tr>
+        <tr><td style="padding: 6px 0; color: #888888;">Guests</td><td style="padding: 6px 0;">{{guests}}</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #333333; text-align: center;">
+    <div style="color: #888888; font-size: 12px;">LEDJS · Interactive DJ Entertainment</div>
+    <div style="color: #666666; font-size: 11px; margin-top: 4px;">Creating unforgettable interactive entertainment experiences</div>
+  </div>
+</div>

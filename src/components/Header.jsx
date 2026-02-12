@@ -45,7 +45,7 @@ const Header = () => {
       className="sticky top-0 z-50 shadow-lg border-b"
       style={{ backgroundColor: "#1C1C1C", borderColor: "#135658" }}
     >
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="container mx-auto px-5 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
@@ -132,10 +132,10 @@ const Header = () => {
             })}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - 44x44 min touch target */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-white hover:text-primary-500 transition-colors"
+            className="md:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-white hover:text-primary-500 transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
@@ -152,13 +152,13 @@ const Header = () => {
             className="md:hidden mt-4 pb-4 border-t"
             style={{ borderColor: "#135658" }}
           >
-            <div className="flex flex-col space-y-4 pt-4">
+            <div className="flex flex-col space-y-2 pt-4">
               {navItems.map((item) => (
                 <div key={item.path}>
                   <Link
                     to={item.path}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`font-semibold text-sm tracking-wide uppercase transition-colors py-2 block ${
+                    className={`font-semibold text-sm tracking-wide uppercase transition-colors py-3 min-h-[44px] flex items-center block ${
                       isActive(item.path)
                         ? "text-primary-500"
                         : "text-gray-300 hover:text-white"

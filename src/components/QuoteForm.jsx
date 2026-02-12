@@ -1,18 +1,12 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import { Turnstile } from '@marsidev/react-turnstile';
-import { useCookieConsent } from '../contexts/CookieConsent';
 
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY;
 
 const QuoteForm = () => {
-  const { hasConsent } = useCookieConsent();
-  const turnstileRef = useRef(null);
-  const [captchaToken, setCaptchaToken] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -82,36 +76,20 @@ const QuoteForm = () => {
       return;
     }
 
-    // Cookie consent required for Turnstile
-    if (!hasConsent) {
-      setStatus({
-        submitting: false,
-        success: false,
-        error: true,
-        message: 'Please accept cookies to use the contact form.',
-      });
-      return;
-    }
-
-    // Captcha validation
-    if (!captchaToken) {
-      setStatus({
-        submitting: false,
-        success: false,
-        error: true,
-        message: 'Please complete the captcha verification.',
-      });
-      return;
-    }
-
     // Form submission
     try {
       setStatus({ submitting: true, success: false, error: false });
     
+      const payload = {
+        ...formData,
+        time: new Date().toLocaleString('en-IE', { dateStyle: 'medium', timeStyle: 'short' }),
+        services: Array.isArray(formData.services) ? formData.services.join(', ') : formData.services,
+      };
+
       const response = await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
-        formData,
+        payload,
         { publicKey: PUBLIC_KEY }
       );
     
@@ -136,9 +114,7 @@ const QuoteForm = () => {
         details: '',
       });
 
-      // Clear success message and reset captcha after 5 seconds
-      setCaptchaToken(null);
-      turnstileRef.current?.reset();
+      // Clear success message after 5 seconds
       setTimeout(() => {
         setStatus({ submitting: false, success: false, error: false, message: '' });
       }, 5000);
@@ -168,7 +144,7 @@ const QuoteForm = () => {
           value={formData.name}
           onChange={handleInputChange}
           required
-          className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all"
+          className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all text-base"
           placeholder="Your full name"
         />
       </div>
@@ -185,7 +161,9 @@ const QuoteForm = () => {
           value={formData.email}
           onChange={handleInputChange}
           required
-          className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all"
+          inputMode="email"
+          autoComplete="email"
+          className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all text-base"
           placeholder="your.email@example.com"
         />
       </div>
@@ -201,7 +179,9 @@ const QuoteForm = () => {
           name="phone"
           value={formData.phone}
           onChange={handleInputChange}
-          className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all"
+          inputMode="tel"
+          autoComplete="tel"
+          className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all text-base"
           placeholder="(086) 123-4567"
         />
       </div>
@@ -218,7 +198,7 @@ const QuoteForm = () => {
             name="eventDate"
             value={formData.eventDate}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all"
+            className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all text-base"
           />
         </div>
 
@@ -232,7 +212,7 @@ const QuoteForm = () => {
             name="eventType"
             value={formData.eventType}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all"
+            className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all text-base"
             placeholder="Wedding, Corporate, etc."
           />
         </div>
@@ -247,13 +227,13 @@ const QuoteForm = () => {
           {serviceOptions.map((service) => (
             <label
               key={service}
-              className="flex items-center space-x-3 bg-gray-700 px-4 py-3 rounded-lg cursor-pointer hover:bg-gray-600 transition-colors"
+              className="flex items-center space-x-3 bg-gray-700 px-4 py-3 min-h-[44px] rounded-lg cursor-pointer hover:bg-gray-600 transition-colors"
             >
               <input
                 type="checkbox"
                 checked={formData.services.includes(service)}
                 onChange={() => handleCheckboxChange(service)}
-                className="w-5 h-5 text-primary-500 bg-gray-600 border-gray-500 rounded focus:ring-primary-500 focus:ring-2"
+                className="w-5 h-5 min-w-[20px] min-h-[20px] text-primary-500 bg-gray-600 border-gray-500 rounded focus:ring-primary-500 focus:ring-2"
               />
               <span className="text-white">{service}</span>
             </label>
@@ -273,7 +253,8 @@ const QuoteForm = () => {
           value={formData.guests}
           onChange={handleInputChange}
           min="1"
-          className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all"
+          inputMode="numeric"
+          className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all text-base"
           placeholder="Estimated number of guests"
         />
       </div>
@@ -293,26 +274,6 @@ const QuoteForm = () => {
           placeholder="Tell us more about your event and what you're looking for..."
         ></textarea>
       </div>
-
-      {/* Captcha - only shown when cookies accepted */}
-      {TURNSTILE_SITE_KEY && hasConsent ? (
-        <div>
-          <Turnstile
-            ref={turnstileRef}
-            siteKey={TURNSTILE_SITE_KEY}
-            onSuccess={(token) => setCaptchaToken(token)}
-            onExpire={() => setCaptchaToken(null)}
-            options={{
-              theme: 'dark',
-              size: 'normal',
-            }}
-          />
-        </div>
-      ) : !hasConsent && (
-        <div className="p-4 bg-gray-700/50 border border-gray-600 rounded-lg text-gray-400 text-sm">
-          Please accept cookies to enable the contact form and captcha verification.
-        </div>
-      )}
 
       {/* Status Messages */}
       {status.message && (
