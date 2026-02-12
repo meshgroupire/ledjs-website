@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "@dr.pogodin/react-helmet";
 import QuoteForm from "../components/QuoteForm";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
