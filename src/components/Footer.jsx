@@ -6,8 +6,10 @@ import {
   Phone,
   MapPin,
 } from "lucide-react";
+import { useCookieConsent } from "../contexts/CookieConsent";
 
 const Footer = () => {
+  const { hasConsent, openBanner } = useCookieConsent();
   const currentYear = new Date().getFullYear();
 
   const navLinks = [
@@ -111,7 +113,20 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {currentYear} LEDJS. All rights reserved.</p>
+          <p>
+            &copy; {currentYear} LEDJS. All rights reserved.
+            {hasConsent !== null && (
+              <>
+                {" · "}
+                <button
+                  onClick={openBanner}
+                  className="hover:text-primary-500 transition-colors underline"
+                >
+                  Cookie settings
+                </button>
+              </>
+            )}
+          </p>
         </div>
       </div>
     </footer>

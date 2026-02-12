@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { Turnstile } from '@marsidev/react-turnstile';
+import { useCookieConsent } from '../contexts/CookieConsent';
 
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -9,6 +10,7 @@ const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY;
 
 const QuoteForm = () => {
+  const { hasConsent } = useCookieConsent();
   const turnstileRef = useRef(null);
   const [captchaToken, setCaptchaToken] = useState(null);
   const [formData, setFormData] = useState({
@@ -76,6 +78,17 @@ const QuoteForm = () => {
         success: false,
         error: true,
         message: 'Please enter a valid email address.',
+      });
+      return;
+    }
+
+    // Cookie consent required for Turnstile
+    if (!hasConsent) {
+      setStatus({
+        submitting: false,
+        success: false,
+        error: true,
+        message: 'Please accept cookies to use the contact form.',
       });
       return;
     }
@@ -281,8 +294,8 @@ const QuoteForm = () => {
         ></textarea>
       </div>
 
-      {/* Captcha */}
-      {TURNSTILE_SITE_KEY && (
+      {/* Captcha - only shown when cookies accepted */}
+      {TURNSTILE_SITE_KEY && hasConsent ? (
         <div>
           <Turnstile
             ref={turnstileRef}
@@ -294,6 +307,10 @@ const QuoteForm = () => {
               size: 'normal',
             }}
           />
+        </div>
+      ) : !hasConsent && (
+        <div className="p-4 bg-gray-700/50 border border-gray-600 rounded-lg text-gray-400 text-sm">
+          Please accept cookies to enable the contact form and captcha verification.
         </div>
       )}
 
