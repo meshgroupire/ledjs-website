@@ -6,7 +6,7 @@ export const services = [
       "Modern wedding DJ services for couples who love music and want a fun, packed dancefloor, without the clichés.",
 
     shortDescription:
-      "Modern, music-led wedding DJ services for couples who want a fun, packed dancefloor, without the clichés.",
+      "Modern, music-led wedding DJ service for couples who want a packed dancefloor without the clichés.",
 
     longDescription:
       "LEDJS is for couples who love music and want a wedding that feels modern, energetic and effortless. We build the soundtrack around your taste, whether that is 90s and 00s favourites, deeper cuts, a few well placed classics, or tracks that mean something to your crowd.\n\nYou lead the direction and we do the rest. We plan with you, read the room on the night, and keep the energy moving from the first dance through to the final song.",
@@ -27,8 +27,10 @@ export const services = [
     title: "Party DJs",
     description:
       "High-energy party DJ services for birthdays, celebrations, corporate events, and any occasion that needs great music and entertainment.",
+
     shortDescription:
-      "High-energy party DJ services for birthdays, celebrations, and corporate events.",
+      "High-energy DJ service for birthdays, celebrations and corporate events.",
+
     longDescription:
       "From birthdays and anniversaries to corporate nights and big celebrations, our party DJs bring the music, the crowd reads, and the feel good energy. We match the set to your audience and your venue, so the night builds naturally and stays lively.\n\nTell us the vibe you want and any must plays. We will take it from there with professional sound, lighting, and a set that keeps people on the floor.",
 
@@ -48,8 +50,10 @@ export const services = [
     title: "LED Wristband Experience",
     description:
       "Transform your event into a mesmerising light show with our cutting-edge LED wristband technology. Each wristband synchronizes wirelessly to create stunning visual effects that pulse, flash, and flow in perfect harmony with your music.",
+
     shortDescription:
-      "Transform your event into a mesmerising light show with synchronised LED wristbands.",
+      "Synchronised LED wristbands that turn your crowd into part of the show.",
+
     longDescription:
       "Turn your crowd into part of the show. Our synchronised LED wristbands light up the room with coordinated colours and patterns, creating a shared moment your guests will feel as much as they see.\n\nIdeal for weddings, parties and branded events. We can match colours to your theme or brand and control effects throughout the night for big builds, key songs and standout moments.",
 
@@ -67,8 +71,10 @@ export const services = [
     title: "Speed Quizzing",
     description:
       "Bring excitement and friendly competition to your event with our interactive speed quizzing system. Fast-paced questions, real-time scoring, and instant results keep your guests engaged and entertained throughout the event.",
+
     shortDescription:
-      "Interactive speed quizzing system with real-time scoring and instant results.",
+      "Fast-paced interactive quiz with live scoring and on-screen leaderboards.",
+
     longDescription:
       "Fast, competitive and easy to run. Speed Quizzing keeps everyone involved with quickfire questions, live scoring and instant leaderboards on screen.\n\nPerfect for corporate team building, fundraisers, pub nights and private parties. We can tailor rounds to your industry, group, or theme, and we handle the tech so you can focus on the fun.",
 
@@ -88,8 +94,10 @@ export const services = [
     title: "Music Bingo",
     description:
       "Combine the nostalgia of bingo with the joy of music! Players mark off songs on their bingo cards as they hear them play, creating an interactive experience that appeals to all ages and music preferences.",
+
     shortDescription:
-      "A musical twist on the classic game that combines bingo with your favorite tunes.",
+      "A crowd-pleasing mix of bingo and great music, tailored to your audience.",
+
     longDescription:
       "An easy crowd winner that gets people laughing fast. Music Bingo mixes the classic bingo format with great tunes, as players mark songs on their cards when they hear them.\n\nWe tailor the playlists to your audience, from old school favourites to current hits, and themed rounds if you want them. Brilliant as an icebreaker for parties, staff nights, fundraisers and socials.",
 
@@ -110,8 +118,10 @@ export const services = [
     title: "Karaoke Entertainment",
     description:
       "Bring out the star in everyone with our professional karaoke setup! Featuring an extensive song library, crystal-clear sound system, and LED lighting effects that create the perfect stage atmosphere for unforgettable performances.",
+
     shortDescription:
-      "Professional karaoke setup with thousands of songs and crystal-clear sound.",
+      "Professional karaoke setup with thousands of songs and a proper stage feel.",
+
     longDescription:
       "Give your guests the mic and a proper stage feel. Our karaoke setup includes thousands of songs across every genre and decade, crystal clear sound, and LED lighting to lift the atmosphere.\n\nIdeal for parties, corporate events, birthdays and nights out. We run the requests and the queue, keep things moving, and make it easy for everyone to have a go.",
 
