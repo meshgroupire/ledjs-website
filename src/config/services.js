@@ -1,20 +1,16 @@
-// Service Configuration with Image References
-// To update images: Place new images in public/images/services/ folder and update the filename below
-// Image format: Rectangular images recommended (e.g., 800x500px or 1200x600px)
-
 export const services = [
   {
     id: "wedding-djs",
     title: "Wedding DJs.... but not wedding DJs",
     description:
-  "Modern wedding DJ services for couples who love music and want a fun, packed dancefloor ,without the clichés.",
+      "Modern wedding DJ services for couples who love music and want a fun, packed dancefloor, without the clichés.",
 
-shortDescription:
-  "Modern, music-led wedding DJ services for couples who want a fun, packed dancefloor, without the clichés.",
+    shortDescription:
+      "Modern, music-led wedding DJ services for couples who want a fun, packed dancefloor, without the clichés.",
 
-longDescription:
-  "At the LEDJS, we work with couples who genuinely love music and want their wedding to feel modern, energetic, and effortlessly cool. That could mean a full dancefloor to 90s and 00s nostalgia, deeper cuts that reflect your taste, a few perfectly timed classics to bring everyone together, or those tracks only your friendship group truly understands.\n\nYou know your guests better than anyone. We take your lead, shape the soundtrack around you, and use our experience to read the room, build momentum, and keep the energy exactly where it should be, from ceremony right through to the final song."
-,
+    longDescription:
+      "LEDJS is for couples who love music and want a wedding that feels modern, energetic and effortless. We build the soundtrack around your taste, whether that is 90s and 00s favourites, deeper cuts, a few well placed classics, or tracks that mean something to your crowd.\n\nYou lead the direction and we do the rest. We plan with you, read the room on the night, and keep the energy moving from the first dance through to the final song.",
+
     link: "/services#wedding-djs",
     gradient: "from-purple-600 to-pink-600",
     image: "/images/services/wedding-djs.jpg",
@@ -34,7 +30,8 @@ longDescription:
     shortDescription:
       "High-energy party DJ services for birthdays, celebrations, and corporate events.",
     longDescription:
-      "Whether it's a birthday, anniversary, corporate event, or any celebration, our party DJs bring the energy and expertise to make your event unforgettable. We tailor our music selection and style to match your event and audience, ensuring the perfect atmosphere from start to finish.",
+      "From birthdays and anniversaries to corporate nights and big celebrations, our party DJs bring the music, the crowd reads, and the feel good energy. We match the set to your audience and your venue, so the night builds naturally and stays lively.\n\nTell us the vibe you want and any must plays. We will take it from there with professional sound, lighting, and a set that keeps people on the floor.",
+
     link: "/services#party-djs",
     gradient: "from-pink-600 to-purple-600",
     image: "/images/services/ledjs5.jpg",
@@ -54,7 +51,8 @@ longDescription:
     shortDescription:
       "Transform your event into a mesmerising light show with synchronised LED wristbands.",
     longDescription:
-      "Our LED wristbands are perfect for enhancing your wedding, party or event. They create a unified visual experience that connects every guest, turning your audience into part of the show. With customizable colors and patterns, we can match any theme or brand.",
+      "Turn your crowd into part of the show. Our synchronised LED wristbands light up the room with coordinated colours and patterns, creating a shared moment your guests will feel as much as they see.\n\nIdeal for weddings, parties and branded events. We can match colours to your theme or brand and control effects throughout the night for big builds, key songs and standout moments.",
+
     link: "/services#led-wristbands",
     gradient: "from-purple-600 to-pink-600",
     image: "/images/services/ledjs6.jpg",
@@ -72,7 +70,8 @@ longDescription:
     shortDescription:
       "Interactive speed quizzing system with real-time scoring and instant results.",
     longDescription:
-      "Speed Quizzing is perfect for corporate team building, fundraisers, pub nights, and private parties. Our system handles all the scoring automatically, with live leaderboards displayed on screen. Questions can be customized to your industry, interests, or event theme.",
+      "Fast, competitive and easy to run. Speed Quizzing keeps everyone involved with quickfire questions, live scoring and instant leaderboards on screen.\n\nPerfect for corporate team building, fundraisers, pub nights and private parties. We can tailor rounds to your industry, group, or theme, and we handle the tech so you can focus on the fun.",
+
     link: "/services#speed-quizzing",
     gradient: "from-pink-600 to-cyan-600",
     image: "/images/services/ledjs9.jpg",
@@ -92,7 +91,8 @@ longDescription:
     shortDescription:
       "A musical twist on the classic game that combines bingo with your favorite tunes.",
     longDescription:
-      "Music Bingo is the perfect icebreaker and entertainment option for any event. We curate playlists tailored to your audience - from classic hits to current chart-toppers. It's easy to play, incredibly fun, and creates great energy at any gathering.",
+      "An easy crowd winner that gets people laughing fast. Music Bingo mixes the classic bingo format with great tunes, as players mark songs on their cards when they hear them.\n\nWe tailor the playlists to your audience, from old school favourites to current hits, and themed rounds if you want them. Brilliant as an icebreaker for parties, staff nights, fundraisers and socials.",
+
     link: "/services#music-bingo",
     gradient: "from-cyan-600 to-blue-600",
     image: "/images/services/music-bingo.jpg",
@@ -113,7 +113,8 @@ longDescription:
     shortDescription:
       "Professional karaoke setup with thousands of songs and crystal-clear sound.",
     longDescription:
-      "Our karaoke service turns any venue into a professional performance space. With thousands of songs spanning all genres and decades, everyone can find their perfect song. Professional sound equipment, dynamic lighting, and an encouraging host ensure your guests feel like superstars. Perfect for parties, corporate events, birthdays, and celebrations of all kinds.",
+      "Give your guests the mic and a proper stage feel. Our karaoke setup includes thousands of songs across every genre and decade, crystal clear sound, and LED lighting to lift the atmosphere.\n\nIdeal for parties, corporate events, birthdays and nights out. We run the requests and the queue, keep things moving, and make it easy for everyone to have a go.",
+
     link: "/services#karaoke",
     gradient: "from-orange-600 to-red-600",
     image: "/images/services/karaoke.jpg",
@@ -126,13 +127,3 @@ longDescription:
     ],
   },
 ];
-
-// Helper function to get service by ID
-export const getServiceById = (id) => {
-  return services.find((service) => service.id === id);
-};
-
-// Helper function to get all service images (useful for preloading)
-export const getAllServiceImages = () => {
-  return services.map((service) => service.image);
-};
