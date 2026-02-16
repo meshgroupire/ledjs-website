@@ -6,7 +6,7 @@ const Services = () => {
   const services = servicesConfig;
 
   return (
-    <div className="bg-gray-900 min-h-screen">
+    <div className="min-h-screen" style={{ backgroundColor: "#0B0F1A" }}>
       <Helmet>
         <title>Our Services - LED Wristbands, Speed Quizzing & Music Bingo | LED JS</title>
         <meta name="description" content="Discover LEDJS entertainment services: LED wristbands, speed quizzing, music bingo, and professional DJ services for weddings, corporate events, and celebrations in Ireland." />
@@ -32,9 +32,8 @@ const Services = () => {
           <section
             key={service.id}
             id={service.id}
-            className={`section-padding ${
-              isEven ? "bg-gray-900" : "bg-gray-800"
-            }`}
+            className="section-padding"
+            style={{ backgroundColor: isEven ? "#0B0F1A" : "rgba(0, 229, 255, 0.04)" }}
           >
             <div className="container mx-auto">
               <div
@@ -125,9 +124,9 @@ const Services = () => {
           </p>
           <Link
             to="/contact"
-            className="btn-primary inline-flex items-center bg-white text-primary-700 hover:bg-gray-100"
+            className="btn-primary inline-flex items-center"
           >
-            <span>Get Your Custom Quote</span>
+            <span>Pick A Package</span>
           </Link>
         </div>
       </section>

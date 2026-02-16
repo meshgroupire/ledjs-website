@@ -75,9 +75,9 @@ const About = () => {
   ];
 
   return (
-    <div className="bg-gray-900 min-h-screen">
+    <div className="min-h-screen" style={{ backgroundColor: "#0B0F1A" }}>
       <Helmet>
-        <title>About Us - LEDJS Interactive Entertainment | Longford, Ireland</title>
+        <title>Who We Are - LEDJS DJ & Entertainment Services</title>
         <meta name="description" content="Meet LEDJS - passionate about creating unforgettable interactive entertainment. LED wristbands, speed quizzing, music bingo, and DJ services for events across Ireland." />
       </Helmet>
       {/* Page Header */}
@@ -93,7 +93,7 @@ const About = () => {
       </section>
 
       {/* Our Story Section */}
-      <section className="section-padding bg-gray-900">
+      <section className="section-padding" style={{ backgroundColor: "#0B0F1A" }}>
         <div className="container mx-auto px-5 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
@@ -133,13 +133,13 @@ const About = () => {
                 alt="LEDJS Team"
                 className="rounded-xl shadow-2xl"
               />
-              <div className="absolute inset-0 bg-linear-to-br from-primary-600 to-secondary-600 opacity-20 rounded-xl"></div>
+              <div className="absolute inset-0 opacity-20 rounded-xl" style={{ background: "linear-gradient(135deg, #00E5FF, #FF2E88)" }}></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-gray-800">
+      <section className="section-padding" style={{ backgroundColor: "rgba(0, 229, 255, 0.04)" }}>
         <div className="container mx-auto px-5 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-[clamp(1.5rem,5vw,2.5rem)] sm:text-4xl md:text-5xl font-bold text-white mb-4">
@@ -153,7 +153,7 @@ const About = () => {
       </section>
 
       {/* Our Values Section */}
-      <section className="section-padding bg-gray-900">
+      <section className="section-padding" style={{ backgroundColor: "#0B0F1A" }}>
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -169,7 +169,7 @@ const About = () => {
               const Icon = value.icon;
               return (
                 <div key={index} className="card text-center">
-                  <div className="inline-flex p-4 rounded-full bg-linear-to-br from-primary-600 to-secondary-600 mb-4">
+                  <div className="inline-flex p-4 rounded-full mb-4" style={{ background: "linear-gradient(135deg, #00E5FF, #FF2E88)" }}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">
@@ -184,7 +184,7 @@ const About = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="section-padding bg-gray-800">
+      <section className="section-padding" style={{ backgroundColor: "rgba(0, 229, 255, 0.04)" }}>
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -224,7 +224,7 @@ const About = () => {
           </p>
           <Link
             to="/contact"
-            className="btn-primary inline-flex items-center space-x-2 bg-white text-primary-700 hover:bg-gray-100"
+            className="btn-primary inline-flex items-center space-x-2"
           >
             <span>Get in Touch</span>
           </Link>

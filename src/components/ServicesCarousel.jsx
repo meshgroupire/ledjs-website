@@ -164,7 +164,7 @@ const ServicesCarousel = ({ services }) => {
             <span
               className={`block rounded-full transition-all ${
                 index === currentIndex
-                  ? "bg-primary-500 w-8 h-3"
+                  ? "bg-cyan w-8 h-3"
                   : "bg-gray-600 w-3 h-3 group-hover:bg-gray-500"
               }`}
             />

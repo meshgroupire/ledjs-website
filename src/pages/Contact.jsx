@@ -25,16 +25,16 @@ const Contact = () => {
   ];
 
   return (
-    <div className="bg-gray-900 min-h-screen">
+    <div className="min-h-screen" style={{ backgroundColor: "#0B0F1A" }}>
       <Helmet>
-        <title>Get a Quote - Contact LEDJS | Free Event Quote Request</title>
-        <meta name="description" content="Request a free quote for your event. LEDJS offers LED wristbands, speed quizzing, music bingo, and DJ services. Get in touch - we respond within 24 hours." />
+        <title>Get In Touch - Contact The LEDJS</title>
+        <meta name="description" content="Let us host your next event. LEDJS offers LED wristbands, speed quizzing, music bingo, and DJ services. Get in touch - we respond within 24 hours." />
       </Helmet>
-      {/* Page Header */}
+      {/* P age Header */}
       <section className="gradient-bg py-16 sm:py-20">
         <div className="container mx-auto px-5 sm:px-6 text-center">
           <h1 className="text-[clamp(1.75rem,5vw,3rem)] sm:text-5xl md:text-6xl font-bold text-white mb-6 break-words">
-            Get Your Free Quote
+            Get In Touch!
           </h1>
           <p className="text-[clamp(0.875rem,3vw,1rem)] sm:text-xl text-white/90 max-w-3xl mx-auto">
             Tell us about your event and we'll create a custom package just for
@@ -44,7 +44,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form and Info Section */}
-      <section className="section-padding bg-gray-900">
+      <section className="section-padding" style={{ backgroundColor: "#0B0F1A" }}>
         <div className="container mx-auto px-5 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Info */}
@@ -61,8 +61,8 @@ const Contact = () => {
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
                   const content = (
-                    <div className="flex items-start space-x-4 p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
-                      <div className="bg-linear-to-br from-primary-600 to-secondary-600 p-3 rounded-lg">
+                    <div className="flex items-start space-x-4 p-4 rounded-lg transition-colors" style={{ backgroundColor: "rgba(0, 229, 255, 0.05)" }}>
+                      <div className="p-3 rounded-lg" style={{ background: "linear-gradient(135deg, #00E5FF, #FF2E88)" }}>
                         <Icon className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -87,7 +87,7 @@ const Contact = () => {
               </div>
 
               {/* Additional Info */}
-              <div className="mt-8 p-6 bg-linear-to-br from-primary-600/10 to-secondary-600/10 rounded-lg border border-primary-500/20">
+              <div className="mt-8 p-6 rounded-lg" style={{ backgroundColor: "rgba(0, 229, 255, 0.08)", border: "1px solid rgba(0, 229, 255, 0.3)" }}>
                 <h3 className="text-white font-semibold mb-2">
                   Quick Response Guarantee
                 </h3>
@@ -100,13 +100,13 @@ const Contact = () => {
 
             {/* Quote Form */}
             <div className="lg:col-span-2">
-              <div className="bg-gray-800 rounded-xl p-5 sm:p-6 md:p-8 shadow-2xl">
+              <div className="rounded-xl p-5 sm:p-6 md:p-8 shadow-2xl" style={{ backgroundColor: "rgba(0, 229, 255, 0.05)", border: "1px solid rgba(0, 229, 255, 0.15)" }}>
                 <h2 className="text-3xl font-bold text-white mb-2">
-                  Request a Quote
+                  Fill us in... about your event!
                 </h2>
                 <p className="text-gray-400 mb-8">
                   Fill out the form below and we'll get back to you with a
-                  customized quote for your event
+                  customised package for your event.
                 </p>
                 <QuoteForm />
               </div>
@@ -116,7 +116,7 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-padding bg-gray-800">
+      <section className="section-padding" style={{ backgroundColor: "rgba(0, 229, 255, 0.04)" }}>
         <div className="container mx-auto px-5 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-[clamp(1.5rem,5vw,2.25rem)] sm:text-4xl font-bold text-white mb-4 break-words">
@@ -150,7 +150,7 @@ const Contact = () => {
                   "All pricing includes equipment, setup, breakdown, experienced DJ/Host throughout your event. We'll provide a detailed breakdown in your custom quote.",
               },
             ].map((faq, index) => (
-              <div key={index} className="bg-gray-900 rounded-lg p-6">
+              <div key={index} className="rounded-lg p-6" style={{ backgroundColor: "rgba(11, 15, 26, 0.8)", border: "1px solid rgba(0, 229, 255, 0.1)" }}>
                 <h3 className="text-xl font-semibold text-white mb-3">
                   {faq.question}
                 </h3>

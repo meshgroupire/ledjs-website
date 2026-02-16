@@ -12,14 +12,14 @@ const Header = () => {
   const navItems = [
     { name: "HOME", path: "/" },
     {
-      name: "SERVICES",
+      name: "OUR SERVICES",
       path: "/services",
     },
     {
-      name: "ABOUT",
+      name: "WHO WE ARE",
       path: "/about",
     },
-    { name: "CONTACT", path: "/contact" },
+    { name: "GET IN TOUCH", path: "/contact" },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -43,7 +43,7 @@ const Header = () => {
   return (
     <header
       className="sticky top-0 z-50 shadow-lg border-b"
-      style={{ backgroundColor: "#1C1C1C", borderColor: "#135658" }}
+      style={{ backgroundColor: "#0B0F1A", borderColor: "rgba(0, 229, 255, 0.3)" }}
     >
       <nav className="container mx-auto px-5 sm:px-6 py-4">
         <div className="flex items-center justify-between">
@@ -74,8 +74,8 @@ const Header = () => {
                       to={item.path}
                       className={`font-semibold text-sm tracking-wide uppercase transition-colors flex items-center space-x-1 ${
                         isActive(item.path)
-                          ? "text-primary-500"
-                          : "text-gray-300 hover:text-white"
+                          ? "text-cyan"
+                          : "text-gray-300 hover:text-cyan"
                       }`}
                     >
                       <span>{item.name}</span>
@@ -86,8 +86,8 @@ const Header = () => {
                       <div
                         className="absolute top-full left-0 mt-2 w-56 rounded-lg shadow-xl border overflow-hidden z-50"
                         style={{
-                          backgroundColor: "#0f4446",
-                          borderColor: "#135658",
+                          backgroundColor: "#0B0F1A",
+                          borderColor: "rgba(0, 229, 255, 0.3)",
                         }}
                         onMouseEnter={() => openDropdown(item.path)} // ✅ ADDED: keeps it open when hovering the panel
                         onMouseLeave={closeDropdownWithDelay} // ✅ ADDED: closes when leaving the panel too
@@ -97,14 +97,14 @@ const Header = () => {
                             key={subItem.path}
                             to={subItem.path}
                             className="block px-4 py-3 transition-colors"
-                            style={{ color: "#D8B382" }}
+                            style={{ color: "#00E5FF" }}
                             onMouseEnter={(e) => {
-                              e.target.style.backgroundColor = "#135658";
+                              e.target.style.backgroundColor = "rgba(0, 229, 255, 0.2)";
                               e.target.style.color = "#FFFFFF";
                             }}
                             onMouseLeave={(e) => {
                               e.target.style.backgroundColor = "transparent";
-                              e.target.style.color = "#D8B382";
+                              e.target.style.color = "#00E5FF";
                             }}
                           >
                             {subItem.name}
@@ -122,8 +122,8 @@ const Header = () => {
                   to={item.path}
                   className={`font-semibold text-sm tracking-wide uppercase transition-colors ${
                     isActive(item.path)
-                      ? "text-primary-500"
-                      : "text-gray-300 hover:text-white"
+                      ? "text-cyan"
+                      : "text-gray-300 hover:text-cyan"
                   }`}
                 >
                   {item.name}
@@ -135,7 +135,7 @@ const Header = () => {
           {/* Mobile Menu Button - 44x44 min touch target */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-white hover:text-primary-500 transition-colors"
+            className="md:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-white hover:text-cyan transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
@@ -150,7 +150,7 @@ const Header = () => {
         {isMenuOpen && (
           <div
             className="md:hidden mt-4 pb-4 border-t"
-            style={{ borderColor: "#135658" }}
+            style={{ borderColor: "rgba(0, 229, 255, 0.3)" }}
           >
             <div className="flex flex-col space-y-2 pt-4">
               {navItems.map((item) => (
@@ -174,7 +174,7 @@ const Header = () => {
                           key={subItem.path}
                           to={subItem.path}
                           onClick={() => setIsMenuOpen(false)}
-                          className="text-gray-400 hover:text-primary-500 transition-colors block py-1"
+                          className="text-gray-400 hover:text-cyan transition-colors block py-1"
                         >
                           {subItem.name}
                         </Link>

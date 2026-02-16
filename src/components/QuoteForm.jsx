@@ -144,7 +144,7 @@ const QuoteForm = () => {
           value={formData.name}
           onChange={handleInputChange}
           required
-          className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all text-base"
+          className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan focus:ring-2 focus:ring-cyan/50 transition-all text-base"
           placeholder="Your full name"
         />
       </div>
@@ -163,7 +163,7 @@ const QuoteForm = () => {
           required
           inputMode="email"
           autoComplete="email"
-          className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all text-base"
+          className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan focus:ring-2 focus:ring-cyan/50 transition-all text-base"
           placeholder="your.email@example.com"
         />
       </div>
@@ -181,7 +181,7 @@ const QuoteForm = () => {
           onChange={handleInputChange}
           inputMode="tel"
           autoComplete="tel"
-          className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all text-base"
+          className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan focus:ring-2 focus:ring-cyan/50 transition-all text-base"
           placeholder="(086) 123-4567"
         />
       </div>
@@ -198,7 +198,7 @@ const QuoteForm = () => {
             name="eventDate"
             value={formData.eventDate}
             onChange={handleInputChange}
-            className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all text-base"
+            className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-cyan focus:ring-2 focus:ring-cyan/50 transition-all text-base"
           />
         </div>
 
@@ -212,7 +212,7 @@ const QuoteForm = () => {
             name="eventType"
             value={formData.eventType}
             onChange={handleInputChange}
-            className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all text-base"
+            className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan focus:ring-2 focus:ring-cyan/50 transition-all text-base"
             placeholder="Wedding, Corporate, etc."
           />
         </div>
@@ -233,7 +233,8 @@ const QuoteForm = () => {
                 type="checkbox"
                 checked={formData.services.includes(service)}
                 onChange={() => handleCheckboxChange(service)}
-                className="w-5 h-5 min-w-[20px] min-h-[20px] text-primary-500 bg-gray-600 border-gray-500 rounded focus:ring-primary-500 focus:ring-2"
+                className="w-5 h-5 min-w-[20px] min-h-[20px] bg-gray-600 border-gray-500 rounded focus:ring-primary-500 focus:ring-2"
+            style={{ accentColor: "#00E5FF" }}
               />
               <span className="text-white">{service}</span>
             </label>
@@ -254,7 +255,7 @@ const QuoteForm = () => {
           onChange={handleInputChange}
           min="1"
           inputMode="numeric"
-          className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all text-base"
+          className="w-full min-h-[44px] px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan focus:ring-2 focus:ring-cyan/50 transition-all text-base"
           placeholder="Estimated number of guests"
         />
       </div>
@@ -270,7 +271,7 @@ const QuoteForm = () => {
           value={formData.details}
           onChange={handleInputChange}
           rows="5"
-          className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 transition-all resize-none"
+          className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan focus:ring-2 focus:ring-cyan/50 transition-all resize-none"
           placeholder="Tell us more about your event and what you're looking for..."
         ></textarea>
       </div>

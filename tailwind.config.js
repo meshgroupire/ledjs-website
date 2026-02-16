@@ -10,28 +10,24 @@ export default {
         sans: ['Montserrat', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
       colors: {
+        midnight: '#0B0F1A', // Deep Midnight - main background
+        cyan: '#00E5FF', // LED Cyan - primary CTA, buttons, icons
+        pink: '#FF2E88', // Electric Pink - highlights, hover, glow
         primary: {
-          400: '#1e7d7f', // Lighter Teal
-          500: '#135658', // Dark Teal/Greenish-Blue (Elite DJs primary)
-          600: '#0f4446', // Deeper Teal
-          700: '#0b3233', // Deep Teal
+          400: '#33EAFF', // Lighter Cyan
+          500: '#00E5FF', // LED Cyan
+          600: '#00B8CC', // Deeper Cyan
+          700: '#008B99', // Dark Cyan
         },
         secondary: {
-          400: '#e8c99f', // Lighter Gold
-          500: '#D8B382', // Light Gold/Warm Beige (Elite DJs accent)
-          600: '#c99f6a', // Deeper Gold
-          700: '#b88a52', // Deep Gold
+          400: '#FF5AA0', // Lighter Pink
+          500: '#FF2E88', // Electric Pink
+          600: '#E61E78', // Deeper Pink
+          700: '#CC1868', // Dark Pink
         },
         accent: {
-          400: '#D8B382', // Gold accent
-          500: '#135658', // Teal accent
-        },
-        elite: {
-          dark: '#1C1C1C', // Very Dark Grey
-          teal: '#135658', // Dark Teal
-          gold: '#D8B382', // Light Gold
-          lightGold: '#e8c99f', // Lighter Gold
-          darkTeal: '#0f4446', // Deeper Teal
+          400: '#00E5FF', // LED Cyan accent
+          500: '#FF2E88', // Electric Pink accent
         },
       },
       animation: {

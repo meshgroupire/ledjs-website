@@ -12,7 +12,7 @@ export const services = [
       "LEDJS is for couples who love music and want a wedding that feels modern, energetic and effortless. We build the soundtrack around your taste, whether that is 90s and 00s favourites, deeper cuts, a few well placed classics, or tracks that mean something to your crowd.\n\nYou lead the direction and we do the rest. We plan with you, read the room on the night, and keep the energy moving from the first dance through to the final song.",
 
     link: "/services#wedding-djs",
-    gradient: "from-purple-600 to-pink-600",
+    gradient: "from-primary-500 to-secondary-500",
     image: "/images/services/wedding-djs.jpg",
     features: [
       "Professional MC services",
@@ -35,7 +35,7 @@ export const services = [
       "From birthdays and anniversaries to corporate nights and big celebrations, our party DJs bring the music, the crowd reads, and the feel good energy. We match the set to your audience and your venue, so the night builds naturally and stays lively.\n\nTell us the vibe you want and any must plays. We will take it from there with professional sound, lighting, and a set that keeps people on the floor.",
 
     link: "/services#party-djs",
-    gradient: "from-pink-600 to-purple-600",
+    gradient: "from-secondary-500 to-primary-500",
     image: "/images/services/ledjs5.jpg",
     features: [
       "Tailored music for any occasion",
@@ -58,7 +58,7 @@ export const services = [
       "Turn your crowd into part of the show. Our synchronised LED wristbands light up the room with coordinated colours and patterns, creating a shared moment your guests will feel as much as they see.\n\nIdeal for weddings, parties and branded events. We can match colours to your theme or brand and control effects throughout the night for big builds, key songs and standout moments.",
 
     link: "/services#led-wristbands",
-    gradient: "from-purple-600 to-pink-600",
+    gradient: "from-primary-500 to-secondary-500",
     image: "/images/services/ledjs6.jpg",
     features: [
       "Wireless synchronised control system",
@@ -79,7 +79,7 @@ export const services = [
       "Fast, competitive and easy to run. Speed Quizzing keeps everyone involved with quickfire questions, live scoring and instant leaderboards on screen.\n\nPerfect for corporate team building, fundraisers, pub nights and private parties. We can tailor rounds to your industry, group, or theme, and we handle the tech so you can focus on the fun.",
 
     link: "/services#speed-quizzing",
-    gradient: "from-pink-600 to-cyan-600",
+    gradient: "from-secondary-500 to-primary-500",
     image: "/images/services/ledjs9.jpg",
     features: [
       "Real-time scoring and leaderboards",
@@ -102,7 +102,7 @@ export const services = [
       "An easy crowd winner that gets people laughing fast. Music Bingo mixes the classic bingo format with great tunes, as players mark songs on their cards when they hear them.\n\nWe tailor the playlists to your audience, from old school favourites to current hits, and themed rounds if you want them. Brilliant as an icebreaker for parties, staff nights, fundraisers and socials.",
 
     link: "/services#music-bingo",
-    gradient: "from-cyan-600 to-blue-600",
+    gradient: "from-primary-500 to-blue-600",
     image: "/images/services/music-bingo.jpg",
     features: [
       "Curated playlists for any musical taste",
@@ -126,7 +126,7 @@ export const services = [
       "Give your guests the mic and a proper stage feel. Our karaoke setup includes thousands of songs across every genre and decade, crystal clear sound, and LED lighting to lift the atmosphere.\n\nIdeal for parties, corporate events, birthdays and nights out. We run the requests and the queue, keep things moving, and make it easy for everyone to have a go.",
 
     link: "/services#karaoke",
-    gradient: "from-orange-600 to-red-600",
+    gradient: "from-secondary-500 to-red-600",
     image: "/images/services/karaoke.jpg",
     features: [
       "Extensive library with thousands of songs",

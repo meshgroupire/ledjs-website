@@ -56,16 +56,16 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#1C1C1C" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#0B0F1A" }}>
       <Helmet>
-        <title>LED JS - Interactive DJ Entertainment</title>
+        <title>LEDJS -  DJ & Entertainment Services</title>
         <meta name="description" content="LEDJS delivers interactive DJ entertainment with LED wristbands, speed quizzing, and music bingo. Creating unforgettable experiences for weddings, corporate events, and parties across Ireland." />
       </Helmet>
       {/* Hero Section */}
       <Hero />
 
       {/* Our Services Section - Sliding Banner */}
-      <section style={{ backgroundColor: "#1C1C1C" }} className="overflow-x-clip">
+      <section style={{ backgroundColor: "#0B0F1A" }} className="overflow-x-clip">
         <div className="container mx-auto px-4 sm:px-6 py-12 max-w-full">
           <div className="text-center mb-12">
             <h2 className="text-[clamp(1.5rem,5vw,2.5rem)] sm:text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
@@ -82,16 +82,16 @@ const Home = () => {
       {/* Testimonials Section - What Our Customers Are Saying */}
       <section
         className="section-padding"
-        style={{ backgroundColor: "#0f4446" }}
+        style={{ backgroundColor: "rgba(0, 229, 255, 0.08)", borderTop: "1px solid rgba(0, 229, 255, 0.15)", borderBottom: "1px solid rgba(0, 229, 255, 0.15)" }}
       >
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center justify-center space-x-2 mb-6">
-              <Star className="w-6 h-6 fill-current text-secondary-500" />
-              <Star className="w-6 h-6 fill-current text-secondary-500" />
-              <Star className="w-6 h-6 fill-current text-secondary-500" />
-              <Star className="w-6 h-6 fill-current text-secondary-500" />
-              <Star className="w-6 h-6 fill-current text-secondary-500" />
+              <Star className="w-6 h-6 fill-current" style={{ color: "#FF2E88" }} />
+              <Star className="w-6 h-6 fill-current" style={{ color: "#FF2E88" }} />
+              <Star className="w-6 h-6 fill-current" style={{ color: "#FF2E88" }} />
+              <Star className="w-6 h-6 fill-current" style={{ color: "#FF2E88" }} />
+              <Star className="w-6 h-6 fill-current" style={{ color: "#FF2E88" }} />
             </div>
             <h2 className="text-[clamp(1.5rem,5vw,2.5rem)] sm:text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight text-center px-2">
               What Our Customers Are Saying
@@ -105,7 +105,8 @@ const Home = () => {
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
                       key={i}
-                      className="w-4 h-4 fill-current text-secondary-500"
+                      className="w-4 h-4 fill-current"
+                      style={{ color: "#FF2E88" }}
                     />
                   ))}
                 </div>
@@ -127,7 +128,7 @@ const Home = () => {
       {/* Key Message Section */}
       <section
         className="section-padding"
-        style={{ backgroundColor: "#1C1C1C" }}
+        style={{ backgroundColor: "#0B0F1A" }}
       >
         <div className="container mx-auto text-center px-5 sm:px-6">
           <h2 className="text-[clamp(1.5rem,5vw,2rem)] sm:text-3xl md:text-4xl font-bold text-white mb-6 break-words">
