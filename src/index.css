@@ -45,6 +45,14 @@ body {
   background: linear-gradient(135deg, #00B8CC 0%, #00E5FF 40%, #FF2E88 100%);
 }
 
+/* Drop shadow for white text on gradient/page headers */
+.gradient-bg h1,
+.gradient-bg h2,
+.gradient-bg p,
+.hero-header-text {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
 .gradient-text {
   background: linear-gradient(to right, #00E5FF, #FF2E88);
   -webkit-background-clip: text;
@@ -55,7 +63,7 @@ body {
 .btn-primary {
   padding: 1rem 2.5rem;
   background: #00E5FF;
-  color: #0B0F1A;
+  color: white;
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
@@ -81,7 +89,7 @@ body {
 .btn-secondary {
   padding: 1rem 2.5rem;
   background-color: transparent;
-  color: #00E5FF;
+  color: white;
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
@@ -98,9 +106,9 @@ body {
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 46, 136, 0.15);
+  background-color: rgba(255, 46, 136, 0.2);
   border-color: #FF2E88;
-  color: #FF2E88;
+  color: white;
   box-shadow: 0 0 20px rgba(255, 46, 136, 0.3);
   transform: translateY(-2px);
 }

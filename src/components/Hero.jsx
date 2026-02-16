@@ -31,7 +31,7 @@ const Hero = () => {
           </span>
         </h1>
 
-        <p className="text-[clamp(0.875rem,3vw,1.25rem)] sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed font-light break-words px-1">
+        <p className="hero-header-text text-[clamp(0.875rem,3vw,1.25rem)] sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed font-light break-words px-1">
           High-energy DJ entertainment with LED wristbands, speed quizzing, music bingo and karaoke. Turning your event into an unforgettable experience.
         </p>
 
