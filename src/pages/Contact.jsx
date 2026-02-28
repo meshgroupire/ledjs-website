@@ -7,7 +7,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "info@theledjs.ie",
+      value: "dave@theledjs.ie",
       link: "mailto:dave@theledjs.ie",
     },
     {

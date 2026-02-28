@@ -99,7 +99,7 @@ const Footer = () => {
                   href="mailto:dave@theledjs.ie"
                   className="text-gray-400 hover:text-cyan transition-colors"
                 >
-                  info@theledjs.ie
+                  dave@theledjs.ie
                 </a>
               </li>
               <li className="flex items-start space-x-3">
