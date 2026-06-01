@@ -12,5 +12,15 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- GigBook Booking Widget -->
+    <script src="https://staging--gigbookie.netlify.app/embed/gigbook-sdk.js"></script>
+    <script>
+      GigBook.init({
+        token: 'FX0us8i-qY6Fr5xefK1qXXdIP0d6FEEp',
+        type: 'floating',
+        position: 'bottom-right'
+      });
+    </script>
   </body>
 </html>
