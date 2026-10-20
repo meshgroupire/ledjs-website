@@ -58,8 +58,8 @@ const Home = () => {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#0B0F1A" }}>
       <Helmet>
-        <title>LEDJS -  DJ & Entertainment Services</title>
-        <meta name="description" content="LEDJS delivers interactive DJ entertainment with LED wristbands, speed quizzing, and music bingo. Creating unforgettable experiences for weddings, corporate events, and parties across Ireland." />
+        <title>Wedding DJs Longford & the Midlands | LEDJS</title>
+        <meta name="description" content="Full-evening wedding DJs and after-band sets from Longford. Personal music planning, party and corporate DJs, with optional LED wristbands. Enquire with LEDJS." />
       </Helmet>
       {/* Hero Section */}
       <Hero />

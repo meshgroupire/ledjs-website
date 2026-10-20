@@ -25,3 +25,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Isolated rebuild and execution records
+.worktrees/
+.superpowers/

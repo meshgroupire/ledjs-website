@@ -8,8 +8,8 @@ const Services = () => {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#0B0F1A" }}>
       <Helmet>
-        <title>Our Services - LED Wristbands, Speed Quizzing & Music Bingo | LED JS</title>
-        <meta name="description" content="Discover LEDJS entertainment services: LED wristbands, speed quizzing, music bingo, and professional DJ services for weddings, corporate events, and celebrations in Ireland." />
+        <title>Wedding & Party DJs, Songo Music Bingo | LEDJS Services</title>
+        <meta name="description" content="Explore LEDJS wedding, party and corporate DJ entertainment, optional LED wristbands, Songo Music Bingo, speed quizzing and karaoke. Based in Longford." />
       </Helmet>
       {/* Page Header */}
       <section className="gradient-bg py-16 sm:py-20">
@@ -48,6 +48,7 @@ const Services = () => {
                       src={service.image}
                       alt={service.title}
                       className="w-full h-auto min-h-[280px] sm:min-h-[350px] md:min-h-[400px] object-cover max-w-full"
+                      style={service.imageFit ? { objectFit: service.imageFit, backgroundColor: service.imageBackground, padding: '32px' } : undefined}
                       onError={(e) => {
                         e.target.style.display = "none";
                         const parent = e.target.parentElement;
@@ -79,9 +80,15 @@ const Services = () => {
                   </p>
 
                   {service.longDescription && (
-                    <p className="text-gray-400 mb-6 leading-relaxed">
+                    <p className="text-gray-400 mb-6 leading-relaxed whitespace-pre-line">
                       {service.longDescription}
                     </p>
+                  )}
+
+                  {service.brandUrl && (
+                    <a href={service.brandUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-cyan underline underline-offset-4 mb-6">
+                      {service.brandLinkLabel}
+                    </a>
                   )}
 
                   {service.features && service.features.length > 0 && (

@@ -1,15 +1,15 @@
 export const services = [
   {
     id: "wedding-djs",
-    title: "Wedding DJs.... but not wedding DJs",
+    title: "Wedding DJs for Your Kind of Night",
     description:
-      "Modern wedding DJ services for couples who love music and want a fun, packed dancefloor, without the clichés.",
+      "Full-evening wedding DJ entertainment and after-band sets, with music planned around you and your guests. Based in Longford, covering the Midlands and beyond.",
 
     shortDescription:
-      "Modern, music-led wedding DJ service for couples who want a packed dancefloor without the clichés.",
+      "Full-evening wedding DJs and after-band sets. Your music, your people, your kind of night.",
 
     longDescription:
-      "LEDJS is for couples who love music and want a wedding that feels modern, energetic and effortless. We build the soundtrack around your taste, whether that is 90s and 00s favourites, deeper cuts, a few well placed classics, or tracks that mean something to your crowd.\n\nYou lead the direction and we do the rest. We plan with you, read the room on the night, and keep the energy moving from the first dance through to the final song.",
+      "Choose a full evening with a wedding DJ as your main entertainment, or an after-band set to keep the celebration moving. We plan your music with you, from the first dance and must-plays to the songs you would rather leave out. Share your date, venue and timings for a tailored quote.\n\nWant an extra visual moment? Synchronised LED wristbands are an optional enhancement to your wedding DJ experience. The music and your guests come first.",
 
     link: "/services#wedding-djs",
     gradient: "from-primary-500 to-secondary-500",
@@ -18,6 +18,7 @@ export const services = [
       "Professional MC services",
       "Professional lighting and sound",
       "Pre-wedding consultation and planning",
+      "Full-evening DJ and after-band options",
       "Experience with all venue types",
       "Custom playlist creation",
     ],
@@ -91,26 +92,28 @@ export const services = [
   },
   {
     id: "music-bingo",
-    title: "Music Bingo",
+    title: "Songo Music Bingo",
     description:
-      "Combine the nostalgia of bingo with the joy of music! Players mark off songs on their bingo cards as they hear them play, creating an interactive experience that appeals to all ages and music preferences.",
+      "LEDJS is a Songo franchisee. Bring Songo Music Bingo to your fundraiser, staff event or venue night, with Dave as your local enquiry contact.",
 
     shortDescription:
-      "A crowd-pleasing mix of bingo and great music, tailored to your audience.",
+      "Songo Music Bingo with LEDJS, your local Songo franchisee. Enquire about a fundraiser, staff event or venue night.",
 
     longDescription:
-      "An easy crowd winner that gets people laughing fast. Music Bingo mixes the classic bingo format with great tunes, as players mark songs on their cards when they hear them.\n\nWe tailor the playlists to your audience, from old school favourites to current hits, and themed rounds if you want them. Brilliant as an icebreaker for parties, staff nights, fundraisers and socials.",
+      "Song titles replace the numbers on the bingo cards. Listen, mark the songs as they play and follow your host through each round. On-screen song information helps the room join in.\n\nTell Dave your date, venue and expected attendance. We will discuss the schedule, setup and prize arrangements for your event. Read the official Songo information for an overview, then confirm the details in your LEDJS quote.",
 
     link: "/services#music-bingo",
     gradient: "from-primary-500 to-blue-600",
-    image: "/images/services/music-bingo.jpg",
+    image: "/images/brands/songo-logo.png",
+    imageFit: "contain",
+    imageBackground: "#ffffff",
+    brandUrl: "https://songo.ie/info/",
+    brandLinkLabel: "About Songo Music Bingo",
     features: [
-      "Curated playlists for any musical taste",
-      "Custom bingo cards for each player",
-      "Interactive and engaging gameplay",
-      "Fun for all ages and demographics",
-      "Themed rounds available (80s, 90s, country, etc.)",
-      "Prize packages can be arranged",
+      "Hosted by a Songo franchisee",
+      "Song-title bingo with on-screen support",
+      "Enquiries for fundraisers, staff events and venue nights",
+      "Timings, equipment and prize arrangements agreed in your quote",
     ],
   },
   {

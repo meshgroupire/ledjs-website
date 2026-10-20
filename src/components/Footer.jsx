@@ -105,7 +105,7 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 mt-0.5" style={{ color: "#00E5FF" }} />
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+353868957442"
                   className="text-gray-400 hover:text-cyan transition-colors"
                 >
                   (086) 895 7442

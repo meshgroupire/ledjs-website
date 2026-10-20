@@ -28,7 +28,7 @@ const QuoteForm = () => {
   const serviceOptions = [
     'LED Wristbands',
     'Speed Quizzing',
-    'Music Bingo',
+    'Songo Music Bingo',
     'General DJ Services',
   ];
 

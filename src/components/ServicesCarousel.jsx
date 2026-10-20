@@ -89,6 +89,7 @@ const ServicesCarousel = ({ services }) => {
                       src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover max-w-full"
+                      style={service.imageFit ? { objectFit: service.imageFit, backgroundColor: service.imageBackground, padding: '32px' } : undefined}
                       onError={(e) => {
                         e.target.style.display = "none";
                         const parent = e.target.parentElement;
