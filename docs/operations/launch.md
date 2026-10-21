@@ -33,3 +33,13 @@ Chrome checks passed at 320, 390, 768 and 1440 pixels across six key routes, inc
 Independent review found required questionnaire validation and date-sensitive recovery defects; regression tests reproduced both before fixes and passed afterward. Required fields and structural validation are shared across client/server, per-step native validation runs before navigation, and notification parsing accepts structurally valid historical event dates. Error alerts, private per-message diagnostics and unused ticket style removal address minor findings.
 
 The existing Netlify project is `theledjs` (`808971a9-bc3b-491d-837f-3851b2600be4`). Account metadata reports Forms **not enabled**. Existing production rollback deploy: `6a1dda729802a5000883d6d2` (not changed during implementation). Live signature enforcement, registration, retention, inbox/Reply-To/idempotency/bounce results remain unverified until controlled provider setup. Final policy and image/franchise approval remain owner decisions. Measured field performance remains a post-preview/release check. No county-detail generator exists; the coverage hub avoids publishing unsupported location claims.
+
+## Hosted preview evidence
+
+Draft PR: https://github.com/meshgroupire/ledjs-website/pull/8
+
+Verified deploy: https://6ad8fd73806df239a8594245--theledjs.netlify.app (commit `3e023a3`). Review alias: https://deploy-preview-8--theledjs.netlify.app . The existing Git integration created this non-production preview automatically; production remains unchanged. Netlify reports ready, Node 22 runtime and the form notification event function registered for `submission_created`.
+
+Read-only requests confirmed public routes return 200 with noindex, sitemap returns 200, and `/events` plus an unknown path return 404. The complete Chrome smoke suite also passed against the hosted preview at all four viewport sizes. Form transport fixtures were intercepted in the browser; no real submissions or emails were sent. Registration/retention/delivery remain unverified with Forms disabled.
+
+A generic deployment tool action was rejected by automatic approval review because it could change the live service without a release decision. No production deployment or workaround was attempted. The preview above came from the existing draft-PR workflow. Keep production release behind issue 7.
