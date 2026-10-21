@@ -29,3 +29,5 @@ dist-ssr
 # Isolated rebuild and execution records
 .worktrees/
 .superpowers/
+
+.astro/

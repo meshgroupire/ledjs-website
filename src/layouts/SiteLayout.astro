@@ -1,0 +1,42 @@
+---
+import '../styles/site.css';
+import { business, counties, whatsappUrl } from '../config/business.mjs';
+const { title, description, path = '', noindex = false, schema } = Astro.props;
+const preview = process.env.CONTEXT !== 'production';
+const canonical = `${business.url}/${path}`;
+const organization = { '@context':'https://schema.org', '@type':'Organization', '@id':`${business.url}/#organization`, name:business.name, url:business.url, telephone:business.telephone, email:business.email, areaServed:counties.map(name=>({'@type':'AdministrativeArea',name:`County ${name}, Ireland`})) };
+const json = (value: unknown) => JSON.stringify(value).replace(/</g,'\\u003c');
+---
+<!doctype html>
+<html lang="en-IE"><head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{title}</title><meta name="description" content={description} /><link rel="canonical" href={canonical} />
+  {(noindex || preview) && <meta name="robots" content="noindex,follow" />}
+  <meta property="og:type" content="website" /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:url" content={canonical} /><meta property="og:locale" content="en_IE" /><meta property="og:site_name" content="LEDJS" /><meta property="og:image" content={`${business.url}/images/optimized/wedding-djs-1600.webp`} />
+  <meta name="twitter:card" content="summary_large_image" /><link rel="icon" href="/favicon.ico" />
+  <script type="application/ld+json" set:html={json(organization)} />
+  {schema && <script type="application/ld+json" set:html={json(schema)} />}
+</head><body>
+  <a href="#main" class="skip">Skip to content</a>
+  <header class="nav-shell"><div class="wrap nav">
+    <a class="brand" href="/" aria-label="LEDJS home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="brand-word">LEDJS</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main navigation"><a href="/services/wedding-dj">Wedding DJs</a><a href="/services">DJ & entertainment</a><a href="/about">Meet Dave</a><a href="/service-areas">Where we play</a><a href="/contact" class="button">Check your date</a></nav>
+  </div></header>
+  <main id="main"><slot /></main>
+  <footer class="footer"><div class="wrap"><div class="footer-top"><div class="footer-brand"><a class="brand" href="/"><span class="brand-word">LEDJS</span></a><p>Your music. Your people. Your kind of night.<br />Based in Longford, Ireland.</p></div><div class="footer-links"><div><a href="/services/wedding-dj">Wedding DJs</a><a href="/services">Explore entertainment</a><a href="/services/music-bingo">Songo Music Bingo</a><a href="/contact">Plan your event</a></div><div><a href={`mailto:${business.email}`}>{business.email}</a><a href={`tel:${business.telephone}`}>{business.phone}</a><a href={whatsappUrl()} target="_blank" rel="noopener noreferrer">Message on WhatsApp</a><a href="https://instagram.com/theledjs" target="_blank" rel="noopener noreferrer">Instagram</a></div></div></div><div class="footer-bottom"><span>© {new Date().getFullYear()} LEDJS</span><span><a href="/privacy">Privacy</a> · <a href="/booking-information">Booking information</a></span></div></div></footer>
+  <div class="mobile-actions" aria-label="Quick contact"><a class="button" href="/contact">Check your date</a><a class="button chat" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+  <script>
+    import {trackIntent} from '../lib/analytics.mjs';
+    const menu = document.querySelector<HTMLButtonElement>('.menu-toggle');
+    menu?.addEventListener('click', () => { const open = menu.getAttribute('aria-expanded') !== 'true'; menu.setAttribute('aria-expanded', String(open)); document.querySelector('#nav-links')?.classList.toggle('open', open); });
+    document.addEventListener('keydown', event => { if(event.key === 'Escape' && menu?.getAttribute('aria-expanded') === 'true') { menu.setAttribute('aria-expanded','false'); document.querySelector('#nav-links')?.classList.remove('open'); menu.focus(); } });
+    document.addEventListener('click',event=>{
+      const link=(event.target as Element)?.closest('a');
+      if(!link) return;
+      const href=link.getAttribute('href')||'';
+      if(href.startsWith('tel:')) trackIntent('call_click',{sourcePath:location.pathname},window.ledjsAnalytics);
+      if(href.startsWith('https://wa.me/')) trackIntent('whatsapp_click',{sourcePath:location.pathname},window.ledjsAnalytics);
+    });
+  </script>
+</body></html>

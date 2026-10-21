@@ -1,0 +1,9 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import ServiceCard from '../components/site/ServiceCard.astro';
+import { services } from '../content/services.mjs';
+---
+<SiteLayout path="services" title="Wedding, Party & Corporate DJs | LEDJS Entertainment" description="Explore wedding DJs, party and corporate entertainment, Songo Music Bingo, speed quizzing, karaoke and optional LED wristbands with Longford-based LEDJS.">
+  <section class="page-hero"><div class="wrap"><h1>Find your kind<br />of night.</h1><p>Wedding, party and corporate DJs first. A few good ways to bring everyone into the celebration.</p></div></section>
+  <section class="section"><div class="wrap"><div class="services-grid">{services.map(service=><div id={service.legacyAnchor}><ServiceCard service={service} /></div>)}</div></div></section>
+</SiteLayout>

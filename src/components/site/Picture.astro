@@ -1,0 +1,4 @@
+---
+const { name, alt = '', priority = false, class: className = '' } = Astro.props;
+---
+<img class={className} src={`/images/optimized/${name}-960.webp`} srcset={`/images/optimized/${name}-480.webp 480w, /images/optimized/${name}-960.webp 960w, /images/optimized/${name}-1600.webp 1600w`} sizes="(max-width: 760px) 100vw, 60vw" width="1600" height="1067" alt={alt} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : 'auto'} decoding="async" />

@@ -1,0 +1,62 @@
+---
+import { counties } from '../../config/business.mjs';
+import { services } from '../../content/services.mjs';
+const enabled = import.meta.env.PUBLIC_FORMS_ENABLED === 'true';
+---
+<form class="lead-form" name="ledjs-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" data-enquiry data-enabled={String(enabled)}>
+  <input type="hidden" name="form-name" value="ledjs-enquiry" /><input type="hidden" name="reference" value="" /><input type="hidden" name="sourcePath" value="/contact" />
+  <input type="hidden" name="formKind" value="ledjs-enquiry" />
+  <p class="honeypot" aria-hidden="true"><label>Leave this field empty<input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+  <div class="form-grid">
+    <div class="field"><label for="name">Your name</label><input name="name" id="name" autocomplete="name" required maxlength="120" placeholder="First and last name" /></div>
+    <div class="field"><label for="email">Email address</label><input name="email" id="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com" /></div>
+    <div class="field"><label for="occasion">What's the occasion?</label><select name="occasion" id="occasion"><option>Wedding</option><option>Private party</option><option>Corporate event</option><option>Fundraiser</option><option>Venue night</option></select></div>
+    <div class="field"><label for="eventDate">Event date (optional)</label><input name="eventDate" id="eventDate" type="date" /><p class="helper">Still deciding? Leave this blank.</p></div>
+    <div class="field"><label for="county">County</label><select name="county" id="county" required><option value="">Choose your county</option>{counties.map(county=><option>{county}</option>)}<option>Elsewhere in Ireland</option></select></div>
+    <div class="field"><label for="venue">Venue or town</label><input name="venue" id="venue" required maxlength="180" placeholder="Where are we celebrating?" /></div>
+    <div class="field full"><label for="service">Entertainment you're interested in</label><select name="service" id="service"><option>Help me choose</option>{services.map(service=><option>{service.title}</option>)}<option>A mix of services</option></select></div>
+    <div class="field"><label for="phone">Phone (optional)</label><input name="phone" id="phone" type="tel" autocomplete="tel" maxlength="40" /></div>
+    <div class="field"><label for="guests">Approximate guests (optional)</label><input name="guests" id="guests" type="number" inputmode="numeric" min="1" max="10000" /></div>
+    <div class="field full"><label for="notes">Anything else? (optional)</label><textarea name="notes" id="notes" maxlength="3000" rows="4" placeholder="Your music, your people, your idea for the night…"></textarea></div>
+  </div>
+  <p class="form-note">We use these details to respond to your enquiry. Read our <a href="/privacy">privacy information</a>. Sending an enquiry doesn't reserve your date.</p>
+  <button class="button" type="submit" disabled>Send my enquiry</button>
+  {!enabled && <p class="helper">Online enquiries are currently unavailable. Please email or message Dave directly.</p>}
+  <noscript><p>Please enable JavaScript to use this form, or contact Dave by email, phone or WhatsApp.</p></noscript>
+  <p class="form-result" role="status" aria-live="polite" tabindex="-1" hidden></p>
+</form>
+<script>
+  import { postForm, makeReference } from '../../lib/form-client.mjs';
+  import { trackIntent } from '../../lib/analytics.mjs';
+  const form = document.querySelector<HTMLFormElement>('[data-enquiry]');
+  if(form) {
+    const button = form.querySelector<HTMLButtonElement>('button[type=submit]')!;
+    const status = form.querySelector<HTMLElement>('[role=status]')!;
+    const reference = form.elements.namedItem('reference') as HTMLInputElement;
+    const query = new URLSearchParams(location.search);
+    for(const [key,target] of [['occasion','occasion'],['service','service'],['date','eventDate']]) {
+      const input = form.elements.namedItem(target) as HTMLInputElement | HTMLSelectElement;
+      const value = query.get(key);
+      if(value && (input.tagName !== 'SELECT' || [...(input as HTMLSelectElement).options].some(o=>o.value===value))) input.value=value;
+    }
+    const date = form.elements.namedItem('eventDate') as HTMLInputElement;
+    date.min = new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Dublin',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+    reference.value=makeReference();
+    button.disabled=form.dataset.enabled!=='true';
+    form.addEventListener('focusin',()=>trackIntent('enquiry_start',{sourcePath:'/contact'},window.ledjsAnalytics),{once:true});
+    form.addEventListener('submit',async event=>{
+      event.preventDefault();
+      if(button.disabled || !form.reportValidity()) return;
+      button.disabled=true;button.textContent='Sending your enquiry…';status.hidden=true;
+      try {
+        await postForm(Object.fromEntries(new FormData(form)));
+        trackIntent('enquiry_received',{sourcePath:'/contact'},window.ledjsAnalytics);
+        status.textContent=`Thank you. Your enquiry has been submitted for review. Reference: ${reference.value}. Your date is not reserved yet.`;
+        button.textContent='Enquiry submitted';
+      } catch(error) {
+        status.textContent=(error as Error).message;button.disabled=false;button.textContent='Try sending again';
+      }
+      status.hidden=false;status.focus();
+    });
+  }
+</script>

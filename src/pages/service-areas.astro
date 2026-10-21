@@ -1,0 +1,8 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { counties } from '../config/business.mjs';
+---
+<SiteLayout path="service-areas" title="Wedding & Event DJ Coverage | Longford, Midlands & Beyond" description="LEDJS welcomes wedding and event enquiries across Cavan, Leitrim, Westmeath, Longford, Meath, Mayo, Galway, Dublin and Offaly. Share your venue for a tailored quote.">
+  <section class="page-hero"><div class="wrap"><h1>Where are we<br />celebrating?</h1><p>Based in Longford, with wedding and event enquiries welcome across the Midlands and beyond.</p></div></section>
+  <article class="page-copy"><h2>Your venue. Your plans.</h2><p>Tell us your county, venue or town and the date you have in mind. We'll discuss availability, travel, setup access and timings as part of your quote.</p><ul class="county-list">{counties.map(county=><li>{county}</li>)}</ul><h2>What helps us plan your event?</h2><p>The venue address, approximate attendance, access and finish times help us understand the practical arrangements. For an after-band wedding set, include the band's expected finish time. For interactive entertainment, mention screen or projector access if you know it.</p><h2>A DJ experience built around your crowd.</h2><p>Explore <a href="/services/wedding-dj">full-evening wedding DJs and after-band sets</a>, <a href="/services/party-dj">party DJs</a>, <a href="/services/corporate-entertainment">corporate entertainment</a> or <a href="/services/music-bingo">Songo Music Bingo</a>.</p><a class="button" href="/contact">Enquire about your venue</a></article>
+</SiteLayout>
