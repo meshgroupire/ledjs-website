@@ -1,0 +1,5 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Questionnaire from '../components/enquiries/WeddingQuestionnaire.jsx';
+---
+<SiteLayout path="wedding-questionnaire" noindex title="Wedding Planning Questionnaire | LEDJS" description="Share your wedding music and event plans with LEDJS."><div class="questionnaire"><Questionnaire client:load enabled={import.meta.env.PUBLIC_FORMS_ENABLED === 'true'} /></div></SiteLayout>
