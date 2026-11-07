@@ -1,0 +1,8 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import EnquiryForm from '../components/site/EnquiryForm.astro';
+import {business,whatsappUrl} from '../config/business.mjs';
+---
+<SiteLayout path="contact" title="Check Your Wedding or Event Date | Contact LEDJS" description="Talk to Dave about your wedding, party, corporate event or Songo night. Enquire by form, email, phone or WhatsApp. Based in Longford.">
+  <section class="section"><div class="wrap enquiry"><div><h1 class="display-title">A great night<br />starts with<br />a hello.</h1><p class="intro">Tell Dave what you're planning: the date, the place and the people. We'll discuss the music and entertainment that suit your event.</p><div class="contact-actions"><a class="button chat" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">Message on WhatsApp</a><a class="text-link" href={`mailto:${business.email}`}>{business.email}</a><a class="text-link" href={`tel:${business.telephone}`}>Call {business.phone}</a><p>Based in Longford, covering the Midlands and beyond.</p></div></div><EnquiryForm /></div></section>
+</SiteLayout>

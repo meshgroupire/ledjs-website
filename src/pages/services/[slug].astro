@@ -1,0 +1,24 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { services } from '../../content/services.mjs';
+import { business, counties, whatsappUrl } from '../../config/business.mjs';
+export function getStaticPaths(){ return services.map(service=>({params:{slug:service.slug},props:{service}})); }
+const { service } = Astro.props;
+const copies = import.meta.glob('../../content/service-copy/*.md', { eager:true });
+const copy = copies[`../../content/service-copy/${service.slug}.md`] as {Content?: any} | undefined;
+const Content = copy?.Content;
+const wedding = service.slug === 'wedding-dj';
+const title = wedding ? 'Wedding DJ Longford & the Midlands | LEDJS' : `${service.title} Longford & the Midlands | LEDJS`;
+const path = `services/${service.slug}`;
+const schema = { '@context':'https://schema.org','@graph':[
+  { '@type':'Service', name:service.title, description:service.description, url:`${business.url}/${path}`, provider:{'@id':`${business.url}/#organization`}, areaServed:counties.map(name=>({'@type':'AdministrativeArea',name})) },
+  { '@type':'BreadcrumbList',itemListElement:[{ '@type':'ListItem',position:1,name:'Home',item:business.url+'/'},{ '@type':'ListItem',position:2,name:'Entertainment',item:business.url+'/services'},{ '@type':'ListItem',position:3,name:service.title,item:business.url+'/'+path}] }
+]};
+---
+<SiteLayout path={path} title={title} description={service.shortDescription} schema={schema}>
+  <section class="page-hero"><div class="wrap page-hero-grid"><div><a class="page-back" href="/services">Explore entertainment</a><h1>{wedding ? 'Wedding DJs for your kind of night.' : service.title}</h1><p>{service.description}</p><a class="button" href={`/contact?service=${encodeURIComponent(service.title)}${wedding ? '&occasion=Wedding' : ''}`}>{wedding ? 'Check your wedding date' : 'Enquire about your event'}</a></div><div class:list={{'songo-panel':service.imageFit}}><img class="page-photo" src={service.image} width={service.imageFit ? 275 : 960} height={service.imageFit ? 63 : 640} alt={service.imageFit ? 'Songo' : `${service.title} from the LEDJS gallery`} style={service.imageFit ? 'object-fit:contain;width:275px;height:auto' : ''} /></div></div></section>
+  <article class="page-copy">
+    {Content ? <Content /> : <><h2>Build it around your crowd.</h2>{service.longDescription?.split('\n\n').map((paragraph: string)=><p>{paragraph}</p>)}<h2>What we can discuss</h2><ul>{service.features.map((feature: string)=><li>{feature}</li>)}</ul><h2>Based in Longford. Where are we celebrating?</h2><p>We welcome enquiries from {counties.join(', ')}. Share your venue, date and timings so travel and setup can be included in your quote.</p><h2>Start with the practical details.</h2><p>Tell us the date, venue or town, approximate attendance and the atmosphere you want. We'll discuss availability and the right entertainment for your group. An enquiry does not reserve a booking.</p></>}
+    <div class="page-actions"><a class="button" href={`/contact?service=${encodeURIComponent(service.title)}${wedding ? '&occasion=Wedding' : ''}`}>{wedding ? 'Check your wedding date' : 'Start your enquiry'}</a><a class="text-link" href={whatsappUrl(`Hi Dave, I'd like to discuss ${service.title} for my event.`)} target="_blank" rel="noopener noreferrer">Message Dave on WhatsApp</a></div>
+  </article>
+</SiteLayout>

@@ -12,7 +12,7 @@ Place your service images in this folder and update the references in `src/confi
 - party-djs.jpg
 - led-wristbands.jpg
 - speed-quizzing.jpg
-- music-bingo.jpg
+- Songo wordmark: ../brands/songo-logo.png (approved franchise imagery to follow)
 - karaoke.jpg
 
 ## To Update Images:
